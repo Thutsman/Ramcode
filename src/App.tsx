@@ -1,7 +1,11 @@
 import { type ReactNode, useEffect, useRef } from "react";
 import {
+  Activity,
   ArrowRight,
+  Brain,
+  FileText,
   Globe2,
+  Lightbulb,
   Mail,
   MapPin,
   MonitorCog,
@@ -45,36 +49,55 @@ const stats = [
   ["2", "Integrated Engineering Divisions"],
 ];
 
-const services = [
+const serviceDivisions = [
   {
-    title: "Electrical & Mechanical Engineering",
-    eyebrow: "Industrial · Municipal · Automation",
-    icon: Zap,
-    points: [
-      "Electrical switchgear design, supply & installation",
-      "PLC & SCADA programming — Siemens, Delta, Allen-Bradley, Schneider",
-      "Motor, pump & valve control systems",
-      "Instrumentation & control panel design",
-      "Solar street lighting design, DIALux modelling, BCC approvals",
-      "IIoT platform development via Node-RED & MQTT",
-      "Energy auditing & power systems analysis with ETAP and PowerCAD",
-      "Municipal water, wastewater, traffic lighting, and MEP coordination",
-      "FIDIC tender documentation, BoQ preparation, and remedial programmes",
+    id: "electrical" as const,
+    label: "Electrical & Mechanical Engineering",
+    eyebrow: "Industrial · Municipal · Infrastructure",
+    items: [
+      {
+        title: "Electrical Motor Management & Testing",
+        icon: Activity,
+        desc: "Megger and insulation resistance testing of motors, cables and switchgear. Transformer testing, winding assessment and commissioning. Motor management systems, VFDs, soft-starters, and full electromechanical condition assessments.",
+        tags: ["Megger Testing", "Transformer Testing", "Motor Management", "VFDs & Starters"],
+      },
+      {
+        title: "Street Lighting Design & Installation",
+        icon: Lightbulb,
+        desc: "Solar and conventional street lighting from concept to commissioning. DIALux photometric modelling to EN 13201, BCC-approved drawing submissions, and full pole supply, installation and energisation.",
+        tags: ["Solar Lighting", "DIALux Modelling", "BCC Approved", "LED Installation"],
+      },
+      {
+        title: "Industrial Automation & PLC/SCADA",
+        icon: Zap,
+        desc: "PLC and SCADA programming across Siemens, Delta, Allen-Bradley and Schneider platforms. IIoT development with Node-RED and MQTT, energy auditing with ETAP and PowerCAD, and municipal water and wastewater systems.",
+        tags: ["PLC / SCADA", "Node-RED · MQTT", "ETAP / PowerCAD", "Switchgear"],
+      },
+      {
+        title: "MEP Engineering & FIDIC Documentation",
+        icon: FileText,
+        desc: "Full MEP design covering electrical reticulation, HVAC, fire alarm, CCTV and lightning protection. Complete FIDIC tender documentation, BoQ preparation, and remedial programme management.",
+        tags: ["MEP Design", "FIDIC BoQ", "Fire Alarm · CCTV", "HVAC"],
+      },
     ],
   },
   {
-    title: "AI & Web Application Development",
+    id: "tech" as const,
+    label: "AI & Web Application Development",
     eyebrow: "SaaS · AI Platforms · Full-Stack",
-    icon: MonitorCog,
-    points: [
-      "Full-stack SaaS platforms with React, TypeScript, Supabase, and Next.js",
-      "AI document processing pipelines for invoices, PDFs, and drawings",
-      "Multi-tenant ERP systems for accounting, payroll, inventory, and VAT",
-      "School and enterprise systems with role-based access",
-      "RAG architecture and AI chatbot integration with Gemini, Claude, and GPT",
-      "Real estate, KYC, FinTech, and construction intelligence platforms",
-      "Web-based SCADA dashboards and real-time monitoring interfaces",
-      "Workflow automation for engineering teams and growing businesses",
+    items: [
+      {
+        title: "Web-Based Application Development",
+        icon: MonitorCog,
+        desc: "Production SaaS platforms, multi-tenant ERP and accounting systems, school management systems, and real estate and FinTech applications — built with React, TypeScript, Supabase and Next.js.",
+        tags: ["React · TypeScript", "Supabase · PostgreSQL", "ERP Systems", "SaaS Platforms"],
+      },
+      {
+        title: "AI & Intelligent Automation",
+        icon: Brain,
+        desc: "AI document intelligence for invoices, PDFs and engineering drawings. RAG-powered chatbots and construction document querying. Workflow automation pipelines using Gemini, Claude and GPT.",
+        tags: ["RAG Architecture", "AI OCR", "Gemini · Claude · GPT", "Workflow Automation"],
+      },
     ],
   },
 ];
@@ -84,10 +107,10 @@ const projects = [
     badge: "AI · SaaS",
     kind: "ai",
     name: "SnapBuuks",
-    desc: "AI-powered accounting automation platform with invoice scanning, reconciliation, and financial reporting. Production SaaS with paying customers.",
+    desc: "AI-powered accounting automation platform with invoice scanning, bank PDF conversion, automatic reconciliation, and VAT-ready financial reporting. Production SaaS with paying customers across South Africa.",
     tags: ["React", "Supabase", "AI OCR", "TypeScript"],
-    href: "#contact",
-    link: "Discuss Platform",
+    href: "https://snapbuuks.app",
+    link: "Visit snapbuuks.app",
   },
   {
     badge: "Full-Stack · ERP",
@@ -156,17 +179,17 @@ const projects = [
     badge: "Assessment · Wastewater",
     kind: "electrical",
     name: "Aisleby 3 — BNR Plant Assessment",
-    desc: "Full electromechanical condition assessment of a dormant Bio-Nutrient Removal wastewater treatment plant, with MCC, pump, bioreactor, clarifier, RAS/WAS, and SCADA remediation scope.",
-    tags: ["PLC/MCC", "Pump Systems", "SCADA", "BNR Process"],
+    desc: "Full electromechanical condition assessment of a dormant Bio-Nutrient Removal wastewater treatment plant. Scope included megger/insulation resistance testing of motors and cables, transformer inspection, MCC assessment, pump and bioreactor evaluation, clarifier, RAS/WAS systems, and SCADA remediation planning.",
+    tags: ["Megger Testing", "Transformer Inspection", "PLC/MCC", "Pump Systems", "SCADA", "BNR Process"],
     href: "#contact",
     link: "Assessment Report",
   },
   {
-    badge: "Streetlighting · Design",
+    badge: "Streetlighting · Design & Install",
     kind: "electrical",
     name: "Solar Streetlighting Portfolio",
-    desc: "Lead electrical designer for multiple BCC-approved solar streetlighting schemes, including Norwood Tracks, Umganini Development, and Glengary Residential.",
-    tags: ["DIALux", "EN 13201", "BCC Approved", "Solar"],
+    desc: "Lead electrical designer and installation supervisor for multiple BCC-approved solar streetlighting schemes — Norwood Tracks, Umganini Development, and Glengary Residential. Full scope from DIALux photometric design through to pole installation and commissioning.",
+    tags: ["DIALux", "EN 13201", "BCC Approved", "Solar", "Installation"],
     href: "#contact",
     link: "Design Portfolio",
   },
@@ -428,35 +451,92 @@ function Services() {
     <section id="services" className="relative z-10 bg-secondary/45 px-6 py-20 md:px-10 md:py-28">
       <div className="container">
         <SectionHeading kicker="What We Build" title="Two Divisions. One Engineering Partner." />
-        <div className="grid gap-px overflow-hidden border border-white/10 bg-white/10 lg:grid-cols-2">
-          {services.map((service) => {
-            const Icon = service.icon;
+        <div className="space-y-14">
+          {serviceDivisions.map((division) => {
+            const isElectrical = division.id === "electrical";
             return (
-              <Card key={service.title} className="reveal border-0 bg-background/95 p-8 md:p-12">
-                <CardHeader className="mb-8 border-b border-white/10 pb-8">
-                  <div className="flex items-start gap-5">
-                    <div className="grid h-14 w-14 shrink-0 place-items-center border border-primary/30 bg-primary/10">
-                      <Icon className="h-7 w-7 text-primary" />
-                    </div>
-                    <div>
-                      <CardTitle>{service.title}</CardTitle>
-                      <p className="mt-1 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-primary">
-                        {service.eyebrow}
-                      </p>
-                    </div>
+              <div key={division.id}>
+                <div className="reveal mb-8 flex items-center gap-5">
+                  <div
+                    className={cn(
+                      "shrink-0 border px-5 py-2.5",
+                      isElectrical
+                        ? "border-sky-400/30 bg-sky-400/10"
+                        : "border-primary/30 bg-primary/10",
+                    )}
+                  >
+                    <p
+                      className={cn(
+                        "font-mono text-[0.62rem] uppercase tracking-[0.2em]",
+                        isElectrical ? "text-sky-300" : "text-primary",
+                      )}
+                    >
+                      {division.label}
+                    </p>
+                    <p className="mt-0.5 font-mono text-[0.55rem] uppercase tracking-[0.15em] text-muted-foreground/60">
+                      {division.eyebrow}
+                    </p>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-4">
-                    {service.points.map((point) => (
-                      <li key={point} className="flex gap-3 text-sm leading-6 text-muted-foreground">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/70" />
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+                  <div
+                    className={cn(
+                      "h-px flex-1",
+                      isElectrical ? "bg-sky-400/15" : "bg-primary/15",
+                    )}
+                  />
+                </div>
+                <div className="grid gap-5 md:grid-cols-2">
+                  {division.items.map((service) => {
+                    const Icon = service.icon;
+                    return (
+                      <Card
+                        key={service.title}
+                        className="reveal group relative overflow-hidden p-7 transition duration-300 hover:-translate-y-1 hover:border-primary/40"
+                      >
+                        <div
+                          className={cn(
+                            "absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100",
+                            isElectrical ? "bg-sky-400" : "bg-primary",
+                          )}
+                        />
+                        <div
+                          className={cn(
+                            "mb-5 grid h-12 w-12 place-items-center border",
+                            isElectrical
+                              ? "border-sky-400/30 bg-sky-400/10"
+                              : "border-primary/30 bg-primary/10",
+                          )}
+                        >
+                          <Icon
+                            className={cn(
+                              "h-6 w-6",
+                              isElectrical ? "text-sky-300" : "text-primary",
+                            )}
+                          />
+                        </div>
+                        <CardTitle className="text-base leading-snug">{service.title}</CardTitle>
+                        <CardDescription className="mt-3 text-sm leading-7">
+                          {service.desc}
+                        </CardDescription>
+                        <div className="mt-5 flex flex-wrap gap-2">
+                          {service.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className={cn(
+                                "border px-2.5 py-1 font-mono text-[0.55rem] tracking-[0.08em]",
+                                isElectrical
+                                  ? "border-sky-400/20 bg-sky-400/[0.05] text-sky-300/70"
+                                  : "border-primary/20 bg-primary/[0.05] text-primary/70",
+                              )}
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </Card>
+                    );
+                  })}
+                </div>
+              </div>
             );
           })}
         </div>
