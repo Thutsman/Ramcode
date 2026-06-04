@@ -34,6 +34,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import directorPhoto from "../Thulani.jpg";
 import companyLogo from "../Logo.jpg";
+import motorTestingImg from "../motor-testing.jpg";
+import streetlightingImg from "../streetlighting.jpg";
+import snapbuuksImg from "../snapbuuks-app.jpg";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -107,6 +110,7 @@ const projects = [
     badge: "AI · SaaS",
     kind: "ai",
     name: "SnapBuuks",
+    image: snapbuuksImg,
     desc: "AI-powered accounting automation platform with invoice scanning, bank PDF conversion, automatic reconciliation, and VAT-ready financial reporting. Production SaaS with paying customers across South Africa.",
     tags: ["React", "Supabase", "AI OCR", "TypeScript"],
     href: "https://snapbuuks.app",
@@ -179,6 +183,7 @@ const projects = [
     badge: "Assessment · Wastewater",
     kind: "electrical",
     name: "Aisleby 3 — BNR Plant Assessment",
+    image: motorTestingImg,
     desc: "Full electromechanical condition assessment of a dormant Bio-Nutrient Removal wastewater treatment plant. Scope included megger/insulation resistance testing of motors and cables, transformer inspection, MCC assessment, pump and bioreactor evaluation, clarifier, RAS/WAS systems, and SCADA remediation planning.",
     tags: ["Megger Testing", "Transformer Inspection", "PLC/MCC", "Pump Systems", "SCADA", "BNR Process"],
     href: "#contact",
@@ -188,6 +193,7 @@ const projects = [
     badge: "Streetlighting · Design & Install",
     kind: "electrical",
     name: "Solar Streetlighting Portfolio",
+    image: streetlightingImg,
     desc: "Lead electrical designer and installation supervisor for multiple BCC-approved solar streetlighting schemes — Norwood Tracks, Umganini Development, and Glengary Residential. Full scope from DIALux photometric design through to pole installation and commissioning.",
     tags: ["DIALux", "EN 13201", "BCC Approved", "Solar", "Installation"],
     href: "#contact",
@@ -568,6 +574,16 @@ function Projects() {
               className="reveal group relative overflow-hidden p-7 transition duration-300 hover:-translate-y-1 hover:border-primary/45"
             >
               <div className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100" />
+              {"image" in project && project.image && (
+                <div className="relative -mx-7 -mt-7 mb-6 h-44 overflow-hidden">
+                  <img
+                    src={project.image as string}
+                    alt={project.name}
+                    className="h-full w-full object-cover object-center transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/70" />
+                </div>
+              )}
               <span
                 className={cn(
                   "inline-flex border px-3 py-1 font-mono text-[0.55rem] uppercase tracking-[0.2em]",
