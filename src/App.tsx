@@ -40,6 +40,8 @@ import companyLogo from "../Logo.jpg";
 import motorTestingImg from "../motor-testing.jpg";
 import streetlightingImg from "../streetlighting.jpg";
 import snapbuuksImg from "../snapbuuks-app.jpg";
+import panelInstallPhoto from "../20190213_152616.jpg";
+import transformerTestingPhoto from "../20220616_123346.jpg";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -119,6 +121,23 @@ const serviceDivisions = [
         tags: ["RAG Architecture", "AI OCR", "Gemini · Claude · GPT", "Workflow Automation"],
       },
     ],
+  },
+];
+
+const fieldServices = [
+  {
+    title: "Electrical Panel Design and Installation",
+    description:
+      "Control panel design, assembly, wiring, and commissioning for pump stations, industrial plants, and municipal infrastructure.",
+    image: panelInstallPhoto,
+    alt: "Installed electrical control panel with switchgear, contactors, and pump protection equipment",
+  },
+  {
+    title: "Transformer Testing",
+    description:
+      "On-site electrical testing and condition assessment using specialist diagnostic equipment for transformers and switchgear.",
+    image: transformerTestingPhoto,
+    alt: "Megger TM1800 circuit breaker analyzer system prepared for field electrical testing",
   },
 ];
 
@@ -571,6 +590,41 @@ function Services() {
               </div>
             );
           })}
+        </div>
+
+        <div className="reveal mt-16 md:mt-20">
+          <p className="section-kicker">Services Rendered</p>
+          <h3 className="mt-3 font-display text-4xl font-bold tracking-[0.03em] text-foreground md:text-5xl">
+            Delivered on Site.
+          </h3>
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
+            Field work across panel design, installation, and electrical testing for
+            industrial and municipal clients.
+          </p>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {fieldServices.map((service) => (
+              <figure
+                key={service.title}
+                className="group overflow-hidden border border-white/10 bg-background/95 shadow-card transition duration-300 hover:border-primary/40"
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-secondary">
+                  <img
+                    src={service.image}
+                    alt={service.alt}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+                <figcaption className="border-t border-white/10 p-6">
+                  <p className="font-display text-2xl font-bold tracking-[0.03em] text-foreground">
+                    {service.title}
+                  </p>
+                  <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                    {service.description}
+                  </p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </div>
     </section>
