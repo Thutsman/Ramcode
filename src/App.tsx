@@ -2,8 +2,11 @@ import { type ReactNode, useEffect, useRef } from "react";
 import {
   Activity,
   ArrowRight,
+  BarChart3,
   Brain,
+  ClipboardList,
   FileText,
+  Gauge,
   Globe2,
   Lightbulb,
   Mail,
@@ -57,6 +60,7 @@ const serviceDivisions = [
     id: "electrical" as const,
     label: "Electrical & Mechanical Engineering",
     eyebrow: "Industrial · Municipal · Infrastructure",
+    gridClass: "md:grid-cols-2 xl:grid-cols-3",
     items: [
       {
         title: "Electrical Motor Management & Testing",
@@ -71,16 +75,28 @@ const serviceDivisions = [
         tags: ["Solar Lighting", "DIALux Modelling", "BCC Approved", "LED Installation"],
       },
       {
-        title: "Industrial Automation & PLC/SCADA",
-        icon: Zap,
-        desc: "PLC and SCADA programming across Siemens, Delta, Allen-Bradley and Schneider platforms. IIoT development with Node-RED and MQTT, energy auditing with ETAP and PowerCAD, and municipal water and wastewater systems.",
-        tags: ["PLC / SCADA", "Node-RED · MQTT", "ETAP / PowerCAD", "Switchgear"],
+        title: "Instrumentation & Control Design",
+        icon: Gauge,
+        desc: "End-to-end instrumentation engineering: P&IDs, instrument loop diagrams, flow meter selection and installation (Parshall flumes, open-channel ultrasonic, clamp-on), control valve sizing, RTU design, SCADA integration, and instrument datasheets and cable schedules.",
+        tags: ["P&IDs", "Flow Meters", "Control Valves", "RTU Design", "Loop Diagrams"],
       },
       {
-        title: "MEP Engineering & FIDIC Documentation",
-        icon: FileText,
-        desc: "Full MEP design covering electrical reticulation, HVAC, fire alarm, CCTV and lightning protection. Complete FIDIC tender documentation, BoQ preparation, and remedial programme management.",
-        tags: ["MEP Design", "FIDIC BoQ", "Fire Alarm · CCTV", "HVAC"],
+        title: "Industrial Automation & PLC/SCADA",
+        icon: Zap,
+        desc: "PLC and SCADA programming across Siemens, Delta, Allen-Bradley and Schneider platforms. IIoT development with Node-RED and MQTT. Traffic lighting control systems, and municipal water, wastewater and pump station automation.",
+        tags: ["PLC / SCADA", "Node-RED · MQTT", "Traffic Lighting", "Pump Stations"],
+      },
+      {
+        title: "Power Systems Analysis & HV/MV Design",
+        icon: BarChart3,
+        desc: "Load flow, short circuit, protection coordination, motor acceleration, transformer sizing, voltage drop, cable sizing and harmonics analysis using ETAP and PowerCAD. HV/MV switchgear including SF6 circuit breaker installation and transformer protection relay design.",
+        tags: ["ETAP / PowerCAD", "Protection Coordination", "HV/MV Switchgear", "Energy Auditing (CEA)"],
+      },
+      {
+        title: "Engineering Project & Contract Management",
+        icon: ClipboardList,
+        desc: "PRINCE2-certified project management and FIDIC contract administration covering budget, procurement, bid evaluation, vendor drawing review and site supervision. Safety in design (HAZOP, FMECA), ITP/SWM/JHA production, and MEP coordination (fire alarm, HVAC, CCTV, lightning protection).",
+        tags: ["PRINCE2", "FIDIC Contracts", "HAZOP / FMECA", "MEP Coordination", "Bid Evaluation"],
       },
     ],
   },
@@ -88,6 +104,7 @@ const serviceDivisions = [
     id: "tech" as const,
     label: "AI & Web Application Development",
     eyebrow: "SaaS · AI Platforms · Full-Stack",
+    gridClass: "md:grid-cols-2",
     items: [
       {
         title: "Web-Based Application Development",
@@ -210,14 +227,19 @@ const capabilities = [
   "AI / RAG Architecture",
   "FIDIC Documentation",
   "Gemini · Claude · GPT",
+  "Instrumentation & P&IDs",
+  "HAZOP / FMECA Analysis",
+  "PRINCE2 Project Management",
+  "AutoCAD / SLD Design",
 ];
 
 const credentials = [
-  ["2020", "Company Founded", "Ramcode Investments established in Bulawayo, Zimbabwe"],
+  ["2014", "B.Eng Electronic Engineering", "National University of Science and Technology (NUST), Bulawayo, Zimbabwe"],
+  ["2020", "Company Founded", "Ramcode Investments established in Bulawayo, drawing on 10+ years of municipal engineering delivery"],
   [
-    "10+",
-    "Field Engineering Base",
-    "Experience across municipal water, wastewater, traffic, lighting, and industrial systems",
+    "CEA",
+    "Certified Energy Auditor",
+    "Association of Energy Engineers — membership #90987. PRINCE2 Foundation certified project manager.",
   ],
   [
     "2023",
@@ -232,12 +254,16 @@ const credentials = [
 ];
 
 const serviceOptions = [
-  "Electromechanical / Industrial Automation",
-  "Solar Street Lighting Design",
-  "PLC / SCADA Programming",
+  "Electrical Motor Management & Testing",
+  "Street Lighting Design & Installation",
+  "Instrumentation & Control Design",
+  "Industrial Automation / PLC / SCADA",
+  "Power Systems Analysis & HV/MV Design",
+  "Engineering Project & Contract Management",
   "AI-Powered Web Application",
-  "SaaS Platform Development",
+  "SaaS / ERP Platform Development",
   "IIoT / Web SCADA Dashboard",
+  "Energy Auditing",
   "Engineering Consulting",
   "Other",
 ];
@@ -490,7 +516,7 @@ function Services() {
                     )}
                   />
                 </div>
-                <div className="grid gap-5 md:grid-cols-2">
+                <div className={cn("grid gap-5", division.gridClass)}>
                   {division.items.map((service) => {
                     const Icon = service.icon;
                     return (
@@ -687,10 +713,13 @@ function About() {
             </div>
             <figcaption className="mt-4 border-t border-white/10 pt-4">
               <p className="font-display text-2xl font-bold tracking-[0.04em] text-foreground">
-                T. Dube
+                Thulani Dube
               </p>
               <p className="mt-1 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-primary">
                 Director · Ramcode Investments
+              </p>
+              <p className="mt-0.5 font-mono text-[0.58rem] uppercase tracking-[0.14em] text-muted-foreground/70">
+                CEA · PRINCE2 Foundation · B.Eng Electronic Engineering
               </p>
             </figcaption>
           </figure>
