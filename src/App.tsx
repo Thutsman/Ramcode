@@ -4,8 +4,8 @@ import {
   ArrowRight,
   BarChart3,
   Brain,
+  CheckCircle2,
   ClipboardList,
-  FileText,
   Gauge,
   Globe2,
   Lightbulb,
@@ -13,26 +13,16 @@ import {
   MapPin,
   MonitorCog,
   Phone,
+  ShieldCheck,
+  Workflow,
   Zap,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import directorPhoto from "../Thulani.jpg";
@@ -45,99 +35,100 @@ import transformerTestingPhoto from "../20220616_123346.jpg";
 
 const navItems = [
   { label: "Services", href: "#services" },
-  { label: "Projects", href: "#projects" },
+  { label: "Case Studies", href: "#case-studies" },
+  { label: "Clients", href: "#clients" },
   { label: "Company", href: "#about" },
-  { label: "Contact", href: "#contact" },
 ];
 
 const stats = [
-  ["10+", "Years of Engineering Delivery"],
-  ["13+", "Industrial, Municipal & Software Projects"],
+  ["10+", "Years Engineering Experience"],
+  ["Industrial", "& Municipal Projects Delivered"],
   ["2020", "Founded in Bulawayo, Zimbabwe"],
-  ["2", "Integrated Engineering Divisions"],
+  ["2", "Engineering + Digital Divisions"],
 ];
 
-const serviceDivisions = [
+const heroPillars = [
   {
-    id: "electrical" as const,
-    label: "Electrical & Mechanical Engineering",
-    eyebrow: "Industrial · Municipal · Infrastructure",
-    gridClass: "md:grid-cols-2 xl:grid-cols-3",
-    items: [
-      {
-        title: "Electrical Motor Management & Testing",
-        icon: Activity,
-        desc: "Megger and insulation resistance testing of motors, cables and switchgear. Transformer testing, winding assessment and commissioning. Motor management systems, VFDs, soft-starters, and full electromechanical condition assessments.",
-        tags: ["Megger Testing", "Transformer Testing", "Motor Management", "VFDs & Starters"],
-      },
-      {
-        title: "Street Lighting Design & Installation",
-        icon: Lightbulb,
-        desc: "Solar and conventional street lighting from concept to commissioning. DIALux photometric modelling to EN 13201, BCC-approved drawing submissions, and full pole supply, installation and energisation.",
-        tags: ["Solar Lighting", "DIALux Modelling", "BCC Approved", "LED Installation"],
-      },
-      {
-        title: "Instrumentation & Control Design",
-        icon: Gauge,
-        desc: "End-to-end instrumentation engineering: P&IDs, instrument loop diagrams, flow meter selection and installation (Parshall flumes, open-channel ultrasonic, clamp-on), control valve sizing, RTU design, SCADA integration, and instrument datasheets and cable schedules.",
-        tags: ["P&IDs", "Flow Meters", "Control Valves", "RTU Design", "Loop Diagrams"],
-      },
-      {
-        title: "Industrial Automation & PLC/SCADA",
-        icon: Zap,
-        desc: "PLC and SCADA programming across Siemens, Delta, Allen-Bradley and Schneider platforms. IIoT development with Node-RED and MQTT. Traffic lighting control systems, and municipal water, wastewater and pump station automation.",
-        tags: ["PLC / SCADA", "Node-RED · MQTT", "Traffic Lighting", "Pump Stations"],
-      },
-      {
-        title: "Power Systems Analysis & HV/MV Design",
-        icon: BarChart3,
-        desc: "Load flow, short circuit, protection coordination, motor acceleration, transformer sizing, voltage drop, cable sizing and harmonics analysis using ETAP and PowerCAD. HV/MV switchgear including SF6 circuit breaker installation and transformer protection relay design.",
-        tags: ["ETAP / PowerCAD", "Protection Coordination", "HV/MV Switchgear", "Energy Auditing (CEA)"],
-      },
-      {
-        title: "Engineering Project & Contract Management",
-        icon: ClipboardList,
-        desc: "PRINCE2-certified project management and FIDIC contract administration covering budget, procurement, bid evaluation, vendor drawing review and site supervision. Safety in design (HAZOP, FMECA), ITP/SWM/JHA production, and MEP coordination (fire alarm, HVAC, CCTV, lightning protection).",
-        tags: ["PRINCE2", "FIDIC Contracts", "HAZOP / FMECA", "MEP Coordination", "Bid Evaluation"],
-      },
-    ],
+    title: "Industrial Engineering",
+    points: ["PLC/SCADA", "Instrumentation & Control", "Power Systems"],
+    accent: "text-sky-300 border-sky-400/30 bg-sky-400/10",
   },
   {
-    id: "tech" as const,
-    label: "AI & Web Application Development",
-    eyebrow: "SaaS · AI Platforms · Full-Stack",
-    gridClass: "md:grid-cols-2",
-    items: [
-      {
-        title: "Web-Based Application Development",
-        icon: MonitorCog,
-        desc: "Production SaaS platforms, multi-tenant ERP and accounting systems, school management systems, and real estate and FinTech applications — built with React, TypeScript, Supabase and Next.js.",
-        tags: ["React · TypeScript", "Supabase · PostgreSQL", "ERP Systems", "SaaS Platforms"],
-      },
-      {
-        title: "AI & Intelligent Automation",
-        icon: Brain,
-        desc: "AI document intelligence for invoices, PDFs and engineering drawings. RAG-powered chatbots and construction document querying. Workflow automation pipelines using Gemini, Claude and GPT.",
-        tags: ["RAG Architecture", "AI OCR", "Gemini · Claude · GPT", "Workflow Automation"],
-      },
-    ],
+    title: "Digital Solutions",
+    points: ["Web Applications", "AI Automation", "IoT Platforms"],
+    accent: "text-primary border-primary/30 bg-primary/10",
   },
 ];
 
-const fieldServices = [
+const primaryServices = [
+  {
+    title: "Industrial Automation & PLC/SCADA",
+    icon: Zap,
+    desc: "Design, programming, commissioning, and optimisation of industrial control systems across Siemens, Delta, Allen-Bradley, and Schneider platforms.",
+    outcomes: ["Reliable process control", "Real-time operations visibility", "Reduced downtime and faults"],
+  },
+  {
+    title: "Instrumentation & Control Engineering",
+    icon: Gauge,
+    desc: "Instrumentation architecture, P&IDs, control loops, flow metering, RTU design, and SCADA integration for water and industrial systems.",
+    outcomes: ["Accurate measurement", "Stable process regulation", "Audit-ready engineering documentation"],
+  },
+  {
+    title: "Power Systems Engineering",
+    icon: BarChart3,
+    desc: "Load analysis, transformer and switchgear design, protection coordination, ETAP/PowerCAD studies, and electrical infrastructure assessments.",
+    outcomes: ["Safer power distribution", "Compliance-aligned designs", "Optimised network performance"],
+  },
+];
+
+const secondaryServices = [
+  {
+    title: "Street Lighting",
+    icon: Lightbulb,
+    desc: "DIALux-based design, BCC submissions, installation supervision, and commissioning for solar and conventional lighting schemes.",
+  },
+  {
+    title: "Electrical Testing & Motor Management",
+    icon: Activity,
+    desc: "Megger and insulation resistance testing, transformer condition assessment, and motor management for critical systems.",
+  },
+  {
+    title: "Project & Contract Management",
+    icon: ClipboardList,
+    desc: "PRINCE2/FIDIC-aligned delivery management, procurement support, bid evaluation, and multidisciplinary site coordination.",
+  },
+];
+
+const digitalSupport = [
+  {
+    title: "Web Applications",
+    icon: MonitorCog,
+    desc: "Business applications, ERP modules, and operational dashboards tailored to engineering workflows.",
+  },
+  {
+    title: "AI Automation",
+    icon: Brain,
+    desc: "Document intelligence, automated reporting, and AI-assisted decision support for technical and operational teams.",
+  },
+  {
+    title: "IoT Platforms",
+    icon: Workflow,
+    desc: "Node-RED, MQTT, and cloud-connected telemetry for industrial monitoring and data-driven operations.",
+  },
+];
+
+const serviceEvidence = [
   {
     title: "Electrical Panel Design and Installation",
     description:
       "Control panel design, assembly, wiring, and commissioning for pump stations, industrial plants, and municipal infrastructure.",
     image: panelInstallPhoto,
-    alt: "Installed electrical control panel with switchgear, contactors, and pump protection equipment",
   },
   {
     title: "Transformer Testing",
     description:
       "On-site electrical testing and condition assessment using specialist diagnostic equipment for transformers and switchgear.",
     image: transformerTestingPhoto,
-    alt: "Megger TM1800 circuit breaker analyzer system prepared for field electrical testing",
   },
 ];
 
@@ -147,142 +138,140 @@ const projects = [
     kind: "ai",
     name: "SnapBuuks",
     image: snapbuuksImg,
-    desc: "AI-powered accounting automation platform with invoice scanning, bank PDF conversion, automatic reconciliation, and VAT-ready financial reporting. Production SaaS with paying customers across South Africa.",
+    desc: "AI-powered accounting automation with invoice intelligence, reconciliation, and VAT-ready financial workflows.",
     tags: ["React", "Supabase", "AI OCR", "TypeScript"],
     href: "https://snapbuuks.app",
     link: "Visit snapbuuks.app",
   },
   {
-    badge: "Full-Stack · ERP",
-    kind: "full",
-    name: "SimpliBooks",
-    desc: "Multi-tenant accounting ERP with invoicing, payroll, inventory, multi-currency banking reconciliation, and VAT reporting.",
-    tags: ["React", "PostgreSQL", "RLS", "Tailwind"],
-    href: "https://simplibooks.org",
-    link: "simplibooks.org",
-  },
-  {
-    badge: "EdTech · SaaS",
-    kind: "full",
-    name: "Educore",
-    desc: "Multi-school management SaaS with a 9-role hierarchy covering attendance, academics, finance, assignments, assessments, and scheme books.",
-    tags: ["TypeScript", "Supabase", "shadcn/ui"],
-    href: "#contact",
-    link: "Live Platform",
-  },
-  {
-    badge: "AI · Construction",
-    kind: "ai",
-    name: "ContractorIQ",
-    desc: "Construction document intelligence for querying engineering PDFs, extracting BOQs, specs, and drawing data with RAG architecture.",
-    tags: ["RAG", "Gemini", "Next.js", "PDF AI"],
-    href: "#contact",
-    link: "View Project",
-  },
-  {
     badge: "IIoT · Automation",
     kind: "electrical",
     name: "Oceans Milling Automation",
-    desc: "Deployed weighbridge and factory automation system with real-time production tracking, QC checks, shift reporting, and live dashboards.",
+    desc: "Factory automation with real-time production tracking, quality checks, and shift-level reporting dashboards.",
     tags: ["Node-RED", "MQTT", "PLC", "Real-time"],
     href: "#contact",
     link: "Case Study",
-  },
-  {
-    badge: "IIoT · Reporting",
-    kind: "electrical",
-    name: "Business Reporting System",
-    desc: "Custom industrial reporting platform built for production and operations management. Real-time data capture, shift-based reporting, automated summaries, and dashboard visualisations for factory floor monitoring and management decision-making.",
-    tags: ["Node-RED", "MQTT", "React", "Real-time", "Supabase"],
-    href: "#contact",
-    link: "View System",
-  },
-  {
-    badge: "FinTech · PropTech",
-    kind: "full",
-    name: "Mukamba FinTech",
-    desc: "Rent-to-buy property platform with KYC authentication, property listings, affordability calculators, and role-based dashboards.",
-    tags: ["React", "KYC", "Supabase", "PropTech"],
-    href: "#contact",
-    link: "View Project",
-  },
-  {
-    badge: "MEP · Civil",
-    kind: "electrical",
-    name: "Calundike Exports — Shop Alterations",
-    desc: "Subcontracted MEP design and supervision for a Bulawayo shop addition covering electrical reticulation, fire alarm, CCTV, lightning protection, HVAC, plumbing, drainage, and FIDIC bidding documents.",
-    tags: ["Electrical Design", "HVAC", "Fire Alarm", "FIDIC BoQ", "CCTV"],
-    href: "#contact",
-    link: "Case Study",
-  },
-  {
-    badge: "Assessment · Wastewater",
-    kind: "electrical",
-    name: "Aisleby 3 — BNR Plant Assessment",
-    image: motorTestingImg,
-    desc: "Full electromechanical condition assessment of a dormant Bio-Nutrient Removal wastewater treatment plant. Scope included megger/insulation resistance testing of motors and cables, transformer inspection, MCC assessment, pump and bioreactor evaluation, clarifier, RAS/WAS systems, and SCADA remediation planning.",
-    tags: ["Megger Testing", "Transformer Inspection", "PLC/MCC", "Pump Systems", "SCADA", "BNR Process"],
-    href: "#contact",
-    link: "Assessment Report",
   },
   {
     badge: "Streetlighting · Design & Install",
     kind: "electrical",
     name: "Solar Streetlighting Portfolio",
     image: streetlightingImg,
-    desc: "Lead electrical designer and installation supervisor for multiple BCC-approved solar streetlighting schemes — Norwood Tracks, Umganini Development, and Glengary Residential. Full scope from DIALux photometric design through to pole installation and commissioning.",
-    tags: ["DIALux", "EN 13201", "BCC Approved", "Solar", "Installation"],
+    desc: "BCC-approved solar streetlighting projects from design and modelling through to installation and commissioning.",
+    tags: ["DIALux", "EN 13201", "Solar", "Installation"],
     href: "#contact",
     link: "Design Portfolio",
   },
+  {
+    badge: "Assessment · Wastewater",
+    kind: "electrical",
+    name: "Aisleby 3 — BNR Plant Assessment",
+    image: motorTestingImg,
+    desc: "Electromechanical condition assessment of a dormant wastewater plant including MCC, motors, pumps, and SCADA scope.",
+    tags: ["Megger Testing", "Transformer Inspection", "PLC/MCC", "SCADA"],
+    href: "#contact",
+    link: "Assessment Report",
+  },
+  {
+    badge: "IIoT · Reporting",
+    kind: "electrical",
+    name: "Business Reporting System",
+    desc: "Real-time reporting platform for operations management with shift reports, automated summaries, and decision dashboards.",
+    tags: ["Node-RED", "MQTT", "React", "Supabase"],
+    href: "#contact",
+    link: "View System",
+  },
+  {
+    badge: "Full-Stack · ERP",
+    kind: "full",
+    name: "SimpliBooks",
+    desc: "Multi-tenant accounting ERP for invoicing, payroll, inventory, reconciliation, and VAT reporting.",
+    tags: ["React", "PostgreSQL", "RLS", "Tailwind"],
+    href: "https://simplibooks.org",
+    link: "simplibooks.org",
+  },
+];
+
+const caseStudies = [
+  {
+    title: "Wastewater Treatment Plant Rehabilitation",
+    client: "Municipal Water & Wastewater",
+    challenge: "Dormant treatment assets, unreliable control systems, and high operational risk.",
+    solution: "Electromechanical assessment, MCC and motor testing, SCADA scope definition, phased remedial programme.",
+    outcome: "Clear, fundable rehabilitation roadmap and reduced restart risk.",
+  },
+  {
+    title: "Industrial Automation Systems",
+    client: "Manufacturing & Milling",
+    challenge: "Limited visibility into production, QC, and shift performance.",
+    solution: "PLC/SCADA integration, IIoT telemetry, real-time dashboards, and reporting automation.",
+    outcome: "Faster decision-making and improved production accountability.",
+  },
+  {
+    title: "Street Lighting Projects",
+    client: "Urban Infrastructure Development",
+    challenge: "Need for compliant, efficient lighting across expanding urban corridors.",
+    solution: "DIALux modelling, standards-based design, approvals support, and installation supervision.",
+    outcome: "Energy-efficient lighting networks delivered to municipal standards.",
+  },
+  {
+    title: "Water Infrastructure Projects",
+    client: "Municipal Utilities",
+    challenge: "Aging infrastructure and inconsistent instrumentation data.",
+    solution: "Instrumentation redesign, control loop improvements, and automation upgrades.",
+    outcome: "More stable plant operation and stronger process visibility.",
+  },
+  {
+    title: "Digital Platforms & SaaS Solutions",
+    client: "SMEs & Enterprise Operations",
+    challenge: "Fragmented financial and operational workflows across teams.",
+    solution: "Custom SaaS products, ERP modules, AI automation, and role-based access.",
+    outcome: "Streamlined workflows and measurable reporting consistency.",
+  },
+];
+
+const industries = [
+  "Municipal Infrastructure",
+  "Industrial Manufacturing",
+  "Water & Wastewater",
+  "Energy & Utilities",
+  "Construction & Civil",
+  "SMEs & Enterprise Operations",
+];
+
+const whyChoose = [
+  "Multi-disciplinary engineering capability in one partner",
+  "Strong automation depth from field devices to dashboards",
+  "Software development that supports physical engineering outcomes",
+  "Local delivery using international-standard technologies",
 ];
 
 const capabilities = [
   "PLC/SCADA Programming",
-  "React & TypeScript",
-  "ETAP / PowerCAD",
-  "Supabase & PostgreSQL",
-  "Node-RED & MQTT",
-  "AI / RAG Architecture",
-  "FIDIC Documentation",
-  "Gemini · Claude · GPT",
   "Instrumentation & P&IDs",
-  "HAZOP / FMECA Analysis",
-  "PRINCE2 Project Management",
-  "AutoCAD / SLD Design",
+  "ETAP / PowerCAD",
+  "Node-RED & MQTT",
+  "RAG / AI Automation",
+  "PRINCE2 & FIDIC Delivery",
 ];
 
 const credentials = [
-  ["2014", "B.Eng Electronic Engineering", "National University of Science and Technology (NUST), Bulawayo, Zimbabwe"],
-  ["2020", "Company Founded", "Ramcode Investments established in Bulawayo, drawing on 10+ years of municipal engineering delivery"],
-  [
-    "CEA",
-    "Certified Energy Auditor",
-    "Association of Energy Engineers — membership #90987. PRINCE2 Foundation certified project manager.",
-  ],
-  [
-    "2023",
-    "Digital Product Division Expanded",
-    "AI, SaaS, ERP, and automation platforms added to the company's delivery portfolio",
-  ],
-  [
-    "Now",
-    "Regional Delivery",
-    "Serving Zimbabwe, South Africa, the SADC region, and remote-first software clients",
-  ],
+  ["2014", "B.Eng Electronic Engineering", "National University of Science and Technology (NUST), Bulawayo"],
+  ["2020", "Company Founded", "Ramcode Investments established in Bulawayo, Zimbabwe"],
+  ["CEA", "Certified Energy Auditor", "Association of Energy Engineers member #90987"],
+  ["Now", "Regional Delivery", "Zimbabwe, South Africa, SADC region, and remote software clients"],
 ];
 
 const serviceOptions = [
-  "Electrical Motor Management & Testing",
-  "Street Lighting Design & Installation",
-  "Instrumentation & Control Design",
   "Industrial Automation / PLC / SCADA",
-  "Power Systems Analysis & HV/MV Design",
-  "Engineering Project & Contract Management",
-  "AI-Powered Web Application",
-  "SaaS / ERP Platform Development",
-  "IIoT / Web SCADA Dashboard",
-  "Energy Auditing",
+  "Instrumentation & Control Engineering",
+  "Power Systems Engineering",
+  "Street Lighting Design & Installation",
+  "Electrical Testing & Motor Management",
+  "Project & Contract Management",
+  "Web Application Development",
+  "AI Automation",
+  "IoT Platform Development",
   "Engineering Consulting",
   "Other",
 ];
@@ -366,11 +355,7 @@ function Logo() {
   return (
     <a href="#" className="flex items-center gap-3 text-foreground">
       <span className="inline-flex shrink-0 overflow-hidden rounded-md bg-white p-1 shadow-sm ring-1 ring-white/20">
-        <img
-          src={companyLogo}
-          alt="Ramcode Investments logo"
-          className="h-10 w-auto max-w-[140px] object-contain object-left"
-        />
+        <img src={companyLogo} alt="Ramcode Investments logo" className="h-10 w-auto max-w-[140px] object-contain object-left" />
       </span>
       <span className="hidden font-display text-xl font-bold tracking-[0.16em] sm:inline">
         RAM<span className="text-primary">CODE</span>
@@ -379,22 +364,12 @@ function Logo() {
   );
 }
 
-function SectionHeading({
-  kicker,
-  title,
-  children,
-}: {
-  kicker: string;
-  title: string;
-  children?: ReactNode;
-}) {
+function SectionHeading({ kicker, title, children }: { kicker: string; title: string; children?: ReactNode }) {
   return (
     <div className="reveal mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
       <div>
         <p className="section-kicker">{kicker}</p>
-        <h2 className="max-w-2xl font-display text-4xl font-bold leading-none tracking-[0.03em] text-foreground md:text-6xl">
-          {title}
-        </h2>
+        <h2 className="max-w-3xl font-display text-4xl font-bold leading-none tracking-[0.03em] text-foreground md:text-6xl">{title}</h2>
       </div>
       {children}
     </div>
@@ -403,75 +378,79 @@ function SectionHeading({
 
 function Hero() {
   return (
-    <section className="relative z-10 overflow-hidden px-6 pb-20 pt-32 md:min-h-screen md:px-10 md:pt-36">
+    <section className="relative z-10 overflow-hidden px-6 pb-20 pt-32 md:px-10 md:pt-36">
       <div className="absolute left-1/2 top-24 -z-10 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
-      <div className="container grid items-center gap-14 md:grid-cols-[1.02fr_0.98fr]">
+      <div className="container grid gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-center">
         <div className="reveal">
           <p className="section-kicker">Bulawayo, Zimbabwe · Est. 2020</p>
-          <h1 className="mt-6 font-display text-6xl font-bold leading-[0.94] tracking-[0.02em] text-foreground md:text-8xl">
-            Engineering
+          <h1 className="mt-6 font-display text-5xl font-bold leading-[0.95] tracking-[0.02em] text-foreground md:text-7xl">
+            Engineering Systems
             <br />
-            <span className="text-primary">Systems That</span>
-            <br />
-            Scale.
+            <span className="text-primary">That Scale</span>
           </h1>
-          <p className="mt-5 font-display text-2xl font-light uppercase tracking-[0.12em] text-muted-foreground">
-            Electrical · Mechanical · Automation · AI Software
-          </p>
-          <p className="mt-8 max-w-xl text-base leading-8 text-muted-foreground">
-            <strong className="font-medium text-foreground">Ramcode Investments</strong>{" "}
-            is a Bulawayo-based engineering and technology company delivering
-            industrial electrical systems, automation platforms, and production-ready
-            AI web applications for businesses, municipalities, and growing teams.
+          <p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground">
+            Ramcode delivers engineering expertise combined with modern software, automation, AI, and industrial digitalization.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg">
-              <a href="#projects">
-                View Our Work <ArrowRight className="h-4 w-4" />
+            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <a href="#contact">
+                Start a Project <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
-            <Button asChild variant="ghost" size="lg">
-              <a href="#about">About Ramcode</a>
+            <Button asChild size="lg" variant="outline" className="border-primary/40 text-primary hover:bg-primary/10">
+              <a href="#projects">View Our Work</a>
             </Button>
           </div>
         </div>
 
-        <div className="reveal relative hidden min-h-[520px] place-items-center md:grid">
-          <div className="absolute h-[440px] w-[440px] rounded-full border border-primary/30 animate-orbit" />
-          <div className="absolute h-[360px] w-[360px] rounded-full border border-primary/20 animate-orbit-reverse" />
-          <div className="absolute h-[270px] w-[270px] rounded-full border border-primary/25 animate-orbit" />
-          <Card className="relative grid h-56 w-56 place-items-center rounded-full border-primary/40 bg-secondary/90 text-center shadow-glow">
-            <div>
-              <p className="font-mono text-[0.65rem] uppercase leading-6 tracking-[0.22em] text-primary">
-                Industrial
-                <br />
-                Systems
+        <div className="reveal hero-signal-system relative">
+          <div className="hero-signal-line" aria-hidden />
+          <div className="hero-signal-pulse" aria-hidden />
+          <div className="hero-signal-node hero-signal-node-1" aria-hidden />
+          <div className="hero-signal-node hero-signal-node-2" aria-hidden />
+          <div className="hero-signal-arrow hero-signal-arrow-1" aria-hidden />
+          <div className="hero-signal-arrow hero-signal-arrow-2" aria-hidden />
+
+          <div className="grid gap-4">
+            {heroPillars.map((pillar, index) => (
+              <Card
+                key={pillar.title}
+                className={cn(
+                  "hero-signal-card border-white/10 bg-background/90 p-6",
+                  index === 0 && "hero-signal-card-1",
+                  index === 1 && "hero-signal-card-2",
+                )}
+              >
+                <CardHeader className="relative p-0">
+                  <div className={cn("inline-flex w-fit border px-3 py-1 font-mono text-[0.62rem] uppercase tracking-[0.18em]", pillar.accent)}>
+                    {pillar.title}
+                  </div>
+                  <div className="hero-status-indicator absolute right-0 top-0 inline-flex items-center gap-2 border border-primary/25 bg-primary/10 px-2 py-1 font-mono text-[0.52rem] uppercase tracking-[0.15em] text-primary">
+                    <span className="hero-status-dot" />
+                    Online
+                  </div>
+                </CardHeader>
+                <CardContent className="mt-4 p-0">
+                  <ul className="space-y-2">
+                    {pillar.points.map((point) => (
+                      <li key={point} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="h-4 w-4 text-primary" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+            <Card className="hero-signal-card hero-signal-card-3 border-primary/30 bg-primary/10 p-5">
+              <p className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-primary">
+                Positioning
               </p>
-              <div className="mx-auto my-4 h-px w-12 bg-primary/50" />
-              <p className="font-mono text-[0.65rem] uppercase leading-6 tracking-[0.22em] text-primary">
-                Digital
-                <br />
-                Platforms
+              <p className="mt-2 text-sm leading-7 text-foreground">
+                Software capabilities at Ramcode do not replace engineering delivery. They strengthen field engineering through better control, visibility, and decision support.
               </p>
-            </div>
-          </Card>
-          {[
-            ["PLC / SCADA", "right-4 top-20 border-primary text-primary"],
-            ["React · TypeScript", "bottom-28 left-4"],
-            ["Node-RED · MQTT", "right-0 top-1/2"],
-            ["AI · Supabase", "bottom-16 right-20 border-primary text-primary"],
-          ].map(([label, className], index) => (
-            <span
-              key={label}
-              className={cn(
-                "absolute border border-white/10 bg-secondary px-4 py-2 font-mono text-[0.58rem] uppercase tracking-[0.18em] text-muted-foreground shadow-card animate-float",
-                className,
-              )}
-              style={{ animationDelay: `${index * 350}ms` }}
-            >
-              {label}
-            </span>
-          ))}
+            </Card>
+          </div>
         </div>
       </div>
     </section>
@@ -482,14 +461,10 @@ function Stats() {
   return (
     <section className="relative z-10 border-y border-white/10 bg-card/80 px-6 py-8 backdrop-blur md:px-10">
       <div className="container grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {stats.map(([number, label]) => (
+        {stats.map(([value, label]) => (
           <div key={label} className="reveal border-white/10 lg:border-r lg:pr-8 last:border-r-0">
-            <p className="font-display text-5xl font-bold leading-none text-primary">
-              {number}
-            </p>
-            <p className="mt-2 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-muted-foreground/70">
-              {label}
-            </p>
+            <p className="font-display text-5xl font-bold leading-none text-primary">{value}</p>
+            <p className="mt-2 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-muted-foreground/70">{label}</p>
           </div>
         ))}
       </div>
@@ -501,126 +476,97 @@ function Services() {
   return (
     <section id="services" className="relative z-10 bg-secondary/45 px-6 py-20 md:px-10 md:py-28">
       <div className="container">
-        <SectionHeading kicker="What We Build" title="Two Divisions. One Engineering Partner." />
-        <div className="space-y-14">
-          {serviceDivisions.map((division) => {
-            const isElectrical = division.id === "electrical";
+        <SectionHeading kicker="Services" title="Structured for Clarity and Delivery">
+          <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <a href="#contact">Start a Project</a>
+          </Button>
+        </SectionHeading>
+
+        <div className="reveal mb-6 inline-flex border border-primary/30 bg-primary/10 px-4 py-2 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-primary">
+          Primary Services
+        </div>
+        <div className="grid gap-5 md:grid-cols-3">
+          {primaryServices.map((service) => {
+            const Icon = service.icon;
             return (
-              <div key={division.id}>
-                <div className="reveal mb-8 flex items-center gap-5">
-                  <div
-                    className={cn(
-                      "shrink-0 border px-5 py-2.5",
-                      isElectrical
-                        ? "border-sky-400/30 bg-sky-400/10"
-                        : "border-primary/30 bg-primary/10",
-                    )}
-                  >
-                    <p
-                      className={cn(
-                        "font-mono text-[0.62rem] uppercase tracking-[0.2em]",
-                        isElectrical ? "text-sky-300" : "text-primary",
-                      )}
-                    >
-                      {division.label}
-                    </p>
-                    <p className="mt-0.5 font-mono text-[0.55rem] uppercase tracking-[0.15em] text-muted-foreground/60">
-                      {division.eyebrow}
-                    </p>
+              <Card key={service.title} className="reveal border-primary/30 bg-background/95 p-7">
+                <CardHeader className="p-0">
+                  <div className="mb-4 grid h-12 w-12 place-items-center border border-primary/30 bg-primary/10">
+                    <Icon className="h-6 w-6 text-primary" />
                   </div>
-                  <div
-                    className={cn(
-                      "h-px flex-1",
-                      isElectrical ? "bg-sky-400/15" : "bg-primary/15",
-                    )}
-                  />
-                </div>
-                <div className={cn("grid gap-5", division.gridClass)}>
-                  {division.items.map((service) => {
-                    const Icon = service.icon;
-                    return (
-                      <Card
-                        key={service.title}
-                        className="reveal group relative overflow-hidden p-7 transition duration-300 hover:-translate-y-1 hover:border-primary/40"
-                      >
-                        <div
-                          className={cn(
-                            "absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100",
-                            isElectrical ? "bg-sky-400" : "bg-primary",
-                          )}
-                        />
-                        <div
-                          className={cn(
-                            "mb-5 grid h-12 w-12 place-items-center border",
-                            isElectrical
-                              ? "border-sky-400/30 bg-sky-400/10"
-                              : "border-primary/30 bg-primary/10",
-                          )}
-                        >
-                          <Icon
-                            className={cn(
-                              "h-6 w-6",
-                              isElectrical ? "text-sky-300" : "text-primary",
-                            )}
-                          />
-                        </div>
-                        <CardTitle className="text-base leading-snug">{service.title}</CardTitle>
-                        <CardDescription className="mt-3 text-sm leading-7">
-                          {service.desc}
-                        </CardDescription>
-                        <div className="mt-5 flex flex-wrap gap-2">
-                          {service.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className={cn(
-                                "border px-2.5 py-1 font-mono text-[0.55rem] tracking-[0.08em]",
-                                isElectrical
-                                  ? "border-sky-400/20 bg-sky-400/[0.05] text-sky-300/70"
-                                  : "border-primary/20 bg-primary/[0.05] text-primary/70",
-                              )}
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </Card>
-                    );
-                  })}
-                </div>
-              </div>
+                  <CardTitle className="text-lg leading-tight">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="mt-4 p-0">
+                  <CardDescription className="text-sm leading-7">{service.desc}</CardDescription>
+                  <ul className="mt-4 space-y-2">
+                    {service.outcomes.map((outcome) => (
+                      <li key={outcome} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/80" />
+                        {outcome}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
             );
           })}
         </div>
 
-        <div className="reveal mt-16 md:mt-20">
-          <p className="section-kicker">Services Rendered</p>
-          <h3 className="mt-3 font-display text-4xl font-bold tracking-[0.03em] text-foreground md:text-5xl">
-            Delivered on Site.
-          </h3>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-            Field work across panel design, installation, and electrical testing for
-            industrial and municipal clients.
+        <div className="reveal mb-6 mt-12 inline-flex border border-white/15 bg-background/70 px-4 py-2 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-muted-foreground">
+          Secondary Services
+        </div>
+        <div className="grid gap-5 md:grid-cols-3">
+          {secondaryServices.map((service) => {
+            const Icon = service.icon;
+            return (
+              <Card key={service.title} className="reveal border-white/10 bg-background/90 p-6">
+                <CardHeader className="p-0">
+                  <div className="mb-3 grid h-10 w-10 place-items-center border border-white/15 bg-white/[0.04]">
+                    <Icon className="h-5 w-5 text-muted-foreground" />
+                  </div>
+                  <CardTitle className="text-base">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="mt-3 p-0">
+                  <CardDescription>{service.desc}</CardDescription>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+
+        <div className="reveal mt-12 border border-sky-400/20 bg-sky-400/[0.06] p-6">
+          <p className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-sky-300">Engineering + Software Positioning</p>
+          <p className="mt-3 text-sm leading-7 text-foreground">
+            Ramcode uses digital platforms to support engineering execution: monitoring assets, automating reports, and creating visibility for municipal and industrial operations.
           </p>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {fieldServices.map((service) => (
-              <figure
-                key={service.title}
-                className="group overflow-hidden border border-white/10 bg-background/95 shadow-card transition duration-300 hover:border-primary/40"
-              >
-                <div className="aspect-[4/3] overflow-hidden bg-secondary">
-                  <img
-                    src={service.image}
-                    alt={service.alt}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
-                  />
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            {digitalSupport.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="border border-sky-400/20 bg-background/70 p-4">
+                  <div className="mb-2 flex items-center gap-2">
+                    <Icon className="h-4 w-4 text-sky-300" />
+                    <p className="font-medium text-foreground">{item.title}</p>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{item.desc}</p>
                 </div>
-                <figcaption className="border-t border-white/10 p-6">
-                  <p className="font-display text-2xl font-bold tracking-[0.03em] text-foreground">
-                    {service.title}
-                  </p>
-                  <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                    {service.description}
-                  </p>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="reveal mt-16">
+          <p className="section-kicker">Services Rendered</p>
+          <h3 className="mt-3 font-display text-4xl font-bold tracking-[0.03em] text-foreground md:text-5xl">Delivered On Site</h3>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {serviceEvidence.map((service) => (
+              <figure key={service.title} className="overflow-hidden border border-white/10 bg-background/95 shadow-card">
+                <div className="aspect-[4/3] overflow-hidden bg-secondary">
+                  <img src={service.image} alt={service.title} className="h-full w-full object-cover" />
+                </div>
+                <figcaption className="border-t border-white/10 p-5">
+                  <p className="font-display text-2xl font-bold tracking-[0.03em] text-foreground">{service.title}</p>
+                  <p className="mt-2 text-sm leading-7 text-muted-foreground">{service.description}</p>
                 </figcaption>
               </figure>
             ))}
@@ -641,45 +587,29 @@ function Projects() {
   return (
     <section id="projects" className="relative z-10 px-6 py-20 md:px-10 md:py-28">
       <div className="container">
-        <SectionHeading kicker="Portfolio" title="Deployed & Production-Ready.">
-          <p className="max-w-sm text-sm leading-7 text-muted-foreground">
-            A mix of software platforms, industrial automation, municipal
-            infrastructure, and AI systems delivered under the Ramcode portfolio.
-          </p>
+        <SectionHeading kicker="Featured Projects" title="Industrial, Infrastructure, and Digital Delivery">
+          <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <a href="#contact">Discuss Your Project</a>
+          </Button>
         </SectionHeading>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (
-            <Card
-              key={project.name}
-              className="reveal group relative overflow-hidden p-7 transition duration-300 hover:-translate-y-1 hover:border-primary/45"
-            >
+            <Card key={project.name} className="reveal group relative overflow-hidden p-7 transition duration-300 hover:-translate-y-1 hover:border-primary/45">
               <div className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100" />
               {"image" in project && project.image && (
                 <div className="relative -mx-7 -mt-7 mb-6 h-44 overflow-hidden">
-                  <img
-                    src={project.image as string}
-                    alt={project.name}
-                    className="h-full w-full object-cover object-center transition duration-500 group-hover:scale-105"
-                  />
+                  <img src={project.image as string} alt={project.name} className="h-full w-full object-cover object-center transition duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/70" />
                 </div>
               )}
-              <span
-                className={cn(
-                  "inline-flex border px-3 py-1 font-mono text-[0.55rem] uppercase tracking-[0.2em]",
-                  badgeClass[project.kind as keyof typeof badgeClass],
-                )}
-              >
+              <span className={cn("inline-flex border px-3 py-1 font-mono text-[0.55rem] uppercase tracking-[0.2em]", badgeClass[project.kind as keyof typeof badgeClass])}>
                 {project.badge}
               </span>
               <CardTitle className="mt-5 normal-case">{project.name}</CardTitle>
               <CardDescription className="mt-3">{project.desc}</CardDescription>
               <div className="mt-6 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="border border-white/10 bg-white/[0.04] px-2 py-1 font-mono text-[0.58rem] tracking-[0.08em] text-muted-foreground/80"
-                  >
+                  <span key={tag} className="border border-white/10 bg-white/[0.04] px-2 py-1 font-mono text-[0.58rem] tracking-[0.08em] text-muted-foreground/80">
                     {tag}
                   </span>
                 ))}
@@ -700,55 +630,100 @@ function Projects() {
   );
 }
 
+function CaseStudies() {
+  return (
+    <section id="case-studies" className="relative z-10 bg-secondary/45 px-6 py-20 md:px-10 md:py-28">
+      <div className="container">
+        <SectionHeading kicker="Credibility" title="Case Studies and Project Highlights">
+          <p className="max-w-md text-sm leading-7 text-muted-foreground">
+            Each engagement is structured around operational challenges, practical engineering solutions, and measurable outcomes.
+          </p>
+        </SectionHeading>
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {caseStudies.map((study) => (
+            <Card key={study.title} className="reveal border-white/10 bg-background/90 p-6">
+              <CardHeader className="p-0">
+                <div className="inline-flex w-fit border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-[0.55rem] uppercase tracking-[0.18em] text-primary">
+                  {study.client}
+                </div>
+                <CardTitle className="mt-4 text-xl">{study.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="mt-4 space-y-3 p-0 text-sm text-muted-foreground">
+                <p><strong className="text-foreground">Challenge:</strong> {study.challenge}</p>
+                <p><strong className="text-foreground">Solution:</strong> {study.solution}</p>
+                <p><strong className="text-foreground">Outcome:</strong> {study.outcome}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ClientTrust() {
+  return (
+    <section id="clients" className="relative z-10 px-6 py-20 md:px-10 md:py-28">
+      <div className="container grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+        <Card className="reveal border-white/10 bg-background/90 p-7">
+          <CardHeader className="p-0">
+            <p className="section-kicker">Industries Served</p>
+            <CardTitle className="text-3xl md:text-4xl">Municipal, Industrial, Infrastructure</CardTitle>
+          </CardHeader>
+          <CardContent className="mt-6 p-0">
+            <div className="flex flex-wrap gap-3">
+              {industries.map((industry) => (
+                <span key={industry} className="border border-primary/20 bg-primary/[0.06] px-3 py-2 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-primary">
+                  {industry}
+                </span>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="reveal border-primary/25 bg-primary/[0.06] p-7">
+          <CardHeader className="p-0">
+            <p className="section-kicker">Why Clients Choose Ramcode</p>
+            <CardTitle className="text-3xl md:text-4xl">Trusted Delivery Model</CardTitle>
+          </CardHeader>
+          <CardContent className="mt-6 p-0">
+            <ul className="space-y-3">
+              {whyChoose.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm leading-7 text-foreground">
+                  <ShieldCheck className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <Button asChild className="mt-6 bg-primary text-primary-foreground hover:bg-primary/90">
+              <a href="#contact">Start a Project</a>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+  );
+}
+
 function About() {
   return (
     <section id="about" className="relative z-10 bg-secondary/45 px-6 py-20 md:px-10 md:py-28">
       <div className="container grid gap-12 lg:grid-cols-[1fr_0.92fr] lg:items-center">
         <div className="reveal">
-          <p className="section-kicker">The Company</p>
+          <p className="section-kicker">Company Profile</p>
           <p className="mt-6 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-muted-foreground/70">
             Ramcode Investments · Bulawayo, Zimbabwe
           </p>
-          <h2 className="mt-2 font-display text-6xl font-bold leading-none tracking-[0.04em]">
-            Built for the Field and the Cloud.
+          <h2 className="mt-2 font-display text-5xl font-bold leading-none tracking-[0.04em] md:text-6xl">
+            Engineering Depth. Digital Execution.
           </h2>
-          <p className="mt-2 font-display text-2xl font-light uppercase tracking-[0.12em] text-primary">
-            Industrial Engineering · AI Platforms · Business Systems
-          </p>
-          <div className="mt-8 space-y-6 text-base leading-8 text-muted-foreground">
-            <p>
-              Ramcode Investments combines{" "}
-              <strong className="font-medium text-foreground">
-                field-tested electromechanical engineering
-              </strong>{" "}
-              with modern software delivery. The company serves clients that need
-              practical systems: control panels that work on site, dashboards that
-              reveal operations in real time, and business platforms that can scale.
-            </p>
-            <p>
-              Our work spans{" "}
-              <strong className="font-medium text-foreground">
-                PLC systems, street lighting networks, IIoT automation, SaaS products,
-                ERP platforms, and AI document intelligence
-              </strong>
-              . Ramcode is structured for organisations that want one accountable
-              partner across electrical infrastructure and digital transformation.
-            </p>
-            <p>
-              The company is led by{" "}
-              <strong className="font-medium text-foreground">
-                T. Dube, Director of Ramcode Investments
-              </strong>
-              , with delivery experience across municipal infrastructure, industrial
-              automation, and production software platforms.
-            </p>
+          <div className="mt-8 space-y-4 text-base leading-8 text-muted-foreground">
+            <p>Ramcode combines field engineering with software capability to improve reliability, visibility, and project outcomes.</p>
+            <p>From wastewater and power systems to AI-enabled operations platforms, delivery is built around practical execution and accountability.</p>
           </div>
           <div className="mt-9 grid gap-3 sm:grid-cols-2">
             {capabilities.map((skill) => (
-              <div
-                key={skill}
-                className="flex items-center gap-3 border border-white/10 bg-background/70 px-4 py-3 text-sm text-muted-foreground transition hover:border-primary/40"
-              >
+              <div key={skill} className="flex items-center gap-3 border border-white/10 bg-background/70 px-4 py-3 text-sm text-muted-foreground">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
                 {skill}
               </div>
@@ -759,51 +734,40 @@ function About() {
         <div className="space-y-6">
           <figure className="reveal overflow-hidden border border-primary/35 bg-background/80 p-3 shadow-card">
             <div className="aspect-[4/5] overflow-hidden bg-primary/10">
-              <img
-                src={directorPhoto}
-                alt="T. Dube, Director of Ramcode Investments"
-                className="h-full w-full object-cover object-top"
-              />
+              <img src={directorPhoto} alt="T. Dube, Director of Ramcode Investments" className="h-full w-full object-cover object-top" />
             </div>
             <figcaption className="mt-4 border-t border-white/10 pt-4">
-              <p className="font-display text-2xl font-bold tracking-[0.04em] text-foreground">
-                Thulani Dube
-              </p>
-              <p className="mt-1 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-primary">
-                Director · Ramcode Investments
-              </p>
-              <p className="mt-0.5 font-mono text-[0.58rem] uppercase tracking-[0.14em] text-muted-foreground/70">
-                CEA · PRINCE2 Foundation · B.Eng Electronic Engineering
-              </p>
+              <p className="font-display text-2xl font-bold tracking-[0.04em] text-foreground">Thulani Dube</p>
+              <p className="mt-1 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-primary">Director · Ramcode Investments</p>
             </figcaption>
           </figure>
 
-        <Card className="reveal relative p-8 md:p-10">
-          <span className="absolute left-0 top-0 h-6 w-6 border-l-2 border-t-2 border-primary/60" />
-          <span className="absolute bottom-0 right-0 h-6 w-6 border-b-2 border-r-2 border-primary/60" />
-          <div className="mb-8 flex items-center gap-4">
-            <div className="grid h-16 w-16 place-items-center border border-primary/35 bg-primary/10 font-display text-3xl font-bold text-primary">
-              RC
-            </div>
-            <div>
-              <CardTitle>Ramcode Investments</CardTitle>
-              <p className="mt-1 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-muted-foreground/70">
-                Electrical · Mechanical · Automation · AI Software
-              </p>
-            </div>
-          </div>
-          <div className="space-y-5">
-            {credentials.map(([year, title, text]) => (
-              <div key={title} className="grid grid-cols-[58px_1fr] gap-4">
-                <p className="font-mono text-xs text-primary">{year}</p>
-                <div>
-                  <p className="font-medium text-foreground">{title}</p>
-                  <p className="mt-1 text-sm leading-6 text-muted-foreground">{text}</p>
-                </div>
+          <Card className="reveal relative p-8 md:p-10">
+            <span className="absolute left-0 top-0 h-6 w-6 border-l-2 border-t-2 border-primary/60" />
+            <span className="absolute bottom-0 right-0 h-6 w-6 border-b-2 border-r-2 border-primary/60" />
+            <div className="mb-8 flex items-center gap-4">
+              <div className="grid h-16 w-16 place-items-center border border-primary/35 bg-primary/10 font-display text-3xl font-bold text-primary">
+                RC
               </div>
-            ))}
-          </div>
-        </Card>
+              <div>
+                <CardTitle>Ramcode Investments</CardTitle>
+                <p className="mt-1 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-muted-foreground/70">
+                  Electrical · Mechanical · Automation · AI Software
+                </p>
+              </div>
+            </div>
+            <div className="space-y-5">
+              {credentials.map(([year, title, text]) => (
+                <div key={title} className="grid grid-cols-[64px_1fr] gap-4">
+                  <p className="font-mono text-xs text-primary">{year}</p>
+                  <div>
+                    <p className="font-medium text-foreground">{title}</p>
+                    <p className="mt-1 text-sm leading-6 text-muted-foreground">{text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
         </div>
       </div>
     </section>
@@ -814,22 +778,18 @@ function Contact() {
   return (
     <section id="contact" className="relative z-10 px-6 py-20 md:px-10 md:py-28">
       <div className="container">
-        <SectionHeading kicker="Get In Touch" title="Start Your Engineering or Software Project." />
+        <SectionHeading kicker="Get In Touch" title="Start Your Engineering or Software Project">
+          <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <a href="mailto:ramcodecompany@gmail.com">Email Ramcode</a>
+          </Button>
+        </SectionHeading>
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1fr]">
           <div className="reveal space-y-6">
             {[
-              {
-                icon: MapPin,
-                label: "Location",
-                value: "17 Grenville Ave, West Somerton\nBulawayo, Zimbabwe",
-              },
+              { icon: MapPin, label: "Location", value: "17 Grenville Ave, West Somerton\nBulawayo, Zimbabwe" },
               { icon: Phone, label: "Phone / WhatsApp", value: "+263 779 035 404" },
               { icon: Mail, label: "Email", value: "ramcodecompany@gmail.com" },
-              {
-                icon: Globe2,
-                label: "Region",
-                value: "Zimbabwe · South Africa\nSADC Region · Remote Worldwide",
-              },
+              { icon: Globe2, label: "Region", value: "Zimbabwe · South Africa\nSADC Region · Remote Worldwide" },
             ].map((item) => {
               const Icon = item.icon;
               return (
@@ -838,12 +798,8 @@ function Contact() {
                     <Icon className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-mono text-[0.62rem] uppercase tracking-[0.2em] text-muted-foreground/70">
-                      {item.label}
-                    </p>
-                    <p className="mt-1 whitespace-pre-line text-base leading-7 text-foreground">
-                      {item.value}
-                    </p>
+                    <p className="font-mono text-[0.62rem] uppercase tracking-[0.2em] text-muted-foreground/70">{item.label}</p>
+                    <p className="mt-1 whitespace-pre-line text-base leading-7 text-foreground">{item.value}</p>
                   </div>
                 </div>
               );
@@ -851,12 +807,7 @@ function Contact() {
           </div>
 
           <Card className="reveal p-6 md:p-8">
-            <form
-              className="space-y-5"
-              action="mailto:ramcodecompany@gmail.com"
-              method="post"
-              encType="text/plain"
-            >
+            <form className="space-y-5" action="mailto:ramcodecompany@gmail.com" method="post" encType="text/plain">
               <div className="grid gap-5 md:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="name">Your Name</Label>
@@ -883,15 +834,11 @@ function Contact() {
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  placeholder="Describe your project or enquiry..."
-                />
+                <Label htmlFor="message">Project Brief</Label>
+                <Textarea id="message" name="message" placeholder="Describe scope, timeline, and location..." />
               </div>
-              <Button className="w-full" type="submit">
-                Send Message <ArrowRight className="h-4 w-4" />
+              <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90" type="submit">
+                Start a Project <ArrowRight className="h-4 w-4" />
               </Button>
             </form>
           </Card>
@@ -912,16 +859,12 @@ function App() {
           <Logo />
           <div className="hidden items-center gap-10 md:flex">
             {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-muted-foreground transition hover:text-primary"
-              >
+              <a key={item.href} href={item.href} className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-muted-foreground transition hover:text-primary">
                 {item.label}
               </a>
             ))}
           </div>
-          <Button asChild size="sm" variant="outline">
+          <Button asChild size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
             <a href="#contact">Start a Project</a>
           </Button>
         </nav>
@@ -932,6 +875,8 @@ function App() {
         <Stats />
         <Services />
         <Projects />
+        <CaseStudies />
+        <ClientTrust />
         <About />
         <Contact />
       </main>
@@ -939,16 +884,11 @@ function App() {
       <footer className="relative z-10 border-t border-white/10 bg-card/80 px-6 py-8 md:px-10">
         <div className="container flex flex-col items-center justify-between gap-5 text-center md:flex-row md:text-left">
           <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-muted-foreground/70">
-            © 2026 <span className="text-primary">Ramcode Investments</span> ·
-            Bulawayo, Zimbabwe · All rights reserved
+            © 2026 <span className="text-primary">Ramcode Investments</span> · Bulawayo, Zimbabwe · All rights reserved
           </p>
           <div className="flex flex-wrap justify-center gap-6">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted-foreground/70 transition hover:text-primary"
-              >
+            {[...navItems, { label: "Contact", href: "#contact" }].map((item) => (
+              <a key={`${item.href}-${item.label}`} href={item.href} className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted-foreground/70 transition hover:text-primary">
                 {item.label}
               </a>
             ))}
