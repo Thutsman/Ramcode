@@ -148,15 +148,6 @@ const projects = [
     link: "Visit snapbuuks.app",
   },
   {
-    badge: "IIoT · Automation",
-    kind: "electrical",
-    name: "Oceans Milling Automation",
-    desc: "Factory automation with real-time production tracking, quality checks, and shift-level reporting dashboards.",
-    tags: ["Node-RED", "MQTT", "PLC", "Real-time"],
-    href: "#contact",
-    link: "Case Study",
-  },
-  {
     badge: "Streetlighting · Design & Install",
     kind: "electrical",
     name: "Solar Streetlighting Portfolio",
