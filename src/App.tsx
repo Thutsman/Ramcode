@@ -33,6 +33,7 @@ import snapbuuksImg from "../snapbuuks-app.jpg";
 import panelInstallPhoto from "../20190213_152616.jpg";
 import transformerTestingPhoto from "../20220616_123346.jpg";
 import simplibooksImg from "../simplibooks-app.jpg";
+import businessReportingImg from "../business-reporting.png";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -177,6 +178,7 @@ const projects = [
     badge: "IIoT · Reporting",
     kind: "electrical",
     name: "Business Reporting System",
+    image: businessReportingImg,
     desc: "Real-time reporting platform for operations management with shift reports, automated summaries, and decision dashboards.",
     tags: ["Node-RED", "MQTT", "React", "Supabase"],
     href: "#contact",
