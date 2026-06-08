@@ -742,15 +742,12 @@ function About() {
           <h2 className="mt-2 font-display text-5xl font-bold leading-none tracking-[0.04em] md:text-6xl">
             Engineering Depth. Digital Execution.
           </h2>
-          <div className="mt-8 space-y-5 text-base leading-8 text-muted-foreground">
+          <div className="mt-8 space-y-4 text-base leading-8 text-muted-foreground">
             <p>
-              Ramcode is led by <strong className="font-medium text-foreground">Thulani Dube</strong>, an electrical engineer with over 12 years of hands-on municipal infrastructure delivery at the City of Bulawayo — Zimbabwe's second largest city. From 2012 to 2024 he served as Electrical Engineer in the Water Department, responsible for the full project lifecycle across water treatment, wastewater treatment, pump stations, traffic lighting, and radio communication systems.
+              Ramcode is led by <strong className="font-medium text-foreground">Thulani Dube</strong>, an electrical engineer with over 12 years of municipal infrastructure delivery at the City of Bulawayo — covering water treatment, wastewater treatment, pump stations, traffic lighting, and high-voltage systems.
             </p>
             <p>
-              Municipal projects delivered include the rehabilitation of Aisleby 3 and SAST wastewater treatment plants, the upgrade of Criterion Water Treatment Plant, 88kV SF6 circuit breaker installations at Ncema and Fernhill waterworks, 6.6kV centrifugal pump systems with soft starters and motor protection, large-scale flow metering installations, and the construction of Luveve sewer pump station. Each project was delivered in the role of Electrical Designer and Project Manager.
-            </p>
-            <p>
-              Ramcode Investments was founded in 2020 to bring that same engineering discipline to private and commercial clients — combining field-proven electromechanical delivery with modern automation, IIoT, and AI software platforms.
+              That field experience underpins everything Ramcode delivers: from PLC and instrumentation design to AI platforms and automation software.
             </p>
           </div>
           <div className="mt-9 grid gap-3 sm:grid-cols-2">
@@ -778,25 +775,21 @@ function About() {
           <Card className="reveal relative p-8 md:p-10">
             <span className="absolute left-0 top-0 h-6 w-6 border-l-2 border-t-2 border-primary/60" />
             <span className="absolute bottom-0 right-0 h-6 w-6 border-b-2 border-r-2 border-primary/60" />
-            <div className="mb-8 flex items-center gap-4">
-              <div className="grid h-16 w-16 place-items-center border border-primary/35 bg-primary/10 font-display text-3xl font-bold text-primary">
-                RC
-              </div>
-              <div>
-                <CardTitle>Ramcode Investments</CardTitle>
-                <p className="mt-1 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-muted-foreground/70">
-                  Electrical · Mechanical · Automation · AI Software
-                </p>
-              </div>
-            </div>
-            <div className="space-y-5">
-              {credentials.map(([year, title, text]) => (
-                <div key={title} className="grid grid-cols-[64px_1fr] gap-4">
-                  <p className="font-mono text-xs text-primary">{year}</p>
-                  <div>
-                    <p className="font-medium text-foreground">{title}</p>
-                    <p className="mt-1 text-sm leading-6 text-muted-foreground">{text}</p>
-                  </div>
+            <p className="section-kicker">About the Director</p>
+            <CardTitle className="mt-3 text-2xl">Thulani Dube</CardTitle>
+            <p className="mt-1 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-primary">
+              Technical Director · Ramcode Investments
+            </p>
+            <div className="mt-6 space-y-3">
+              {[
+                ["12+ Yrs", "Municipal engineering — water & wastewater treatment, pump stations, traffic lighting"],
+                ["B.Eng", "Electronic Engineering — NUST Bulawayo, 2014"],
+                ["CEA", "Certified Energy Auditor — Association of Energy Engineers #90987"],
+                ["PRINCE2", "Foundation Certificate in Project Management"],
+              ].map(([label, text]) => (
+                <div key={label} className="flex items-start gap-4 border border-white/10 bg-background/60 px-4 py-3">
+                  <p className="shrink-0 pt-0.5 font-mono text-xs font-bold text-primary">{label}</p>
+                  <p className="text-sm leading-6 text-muted-foreground">{text}</p>
                 </div>
               ))}
             </div>
