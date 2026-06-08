@@ -783,6 +783,8 @@ function About() {
             <div className="mt-6 space-y-3">
               {[
                 ["12+ Yrs", "Municipal engineering — water & wastewater treatment, pump stations, traffic lighting"],
+                ["AI Eng", "RAG architecture, LLM orchestration, vector databases — 3 production AI apps shipped (SnapBuuks, ContractorIQ, Fluxpoint)"],
+                ["Full-Stack", "React, Next.js 14, TypeScript, Node.js, Python, Supabase, AWS — production SaaS platforms with paying customers"],
                 ["B.Eng", "Electronic Engineering — NUST Bulawayo, 2014"],
                 ["CEA", "Certified Energy Auditor — Association of Energy Engineers #90987"],
                 ["PRINCE2", "Foundation Certificate in Project Management"],
