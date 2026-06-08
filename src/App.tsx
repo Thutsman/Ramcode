@@ -1,4 +1,4 @@
-import { type ReactNode, useEffect, useRef } from "react";
+import { type ReactNode, useEffect, useRef, useState } from "react";
 import {
   Activity,
   ArrowRight,
@@ -11,10 +11,12 @@ import {
   Lightbulb,
   Mail,
   MapPin,
+  Menu,
   MonitorCog,
   Phone,
   ShieldCheck,
   Workflow,
+  X,
   Zap,
 } from "lucide-react";
 
@@ -878,12 +880,13 @@ function Contact() {
 
 function App() {
   useRevealAnimation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       <CustomCursor />
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-background/80 px-6 py-4 backdrop-blur-xl md:px-10">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-background/80 backdrop-blur-xl">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
           <Logo />
           <div className="hidden items-center gap-10 md:flex">
             {navItems.map((item) => (
@@ -892,10 +895,43 @@ function App() {
               </a>
             ))}
           </div>
-          <Button asChild size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-            <a href="#contact">Start a Project</a>
-          </Button>
+          <div className="flex items-center gap-3">
+            <Button asChild size="sm" className="hidden bg-primary text-primary-foreground hover:bg-primary/90 sm:inline-flex">
+              <a href="#contact">Start a Project</a>
+            </Button>
+            <button
+              className="grid h-9 w-9 place-items-center border border-white/10 bg-background/60 text-muted-foreground transition hover:border-primary/40 hover:text-primary md:hidden"
+              onClick={() => setMobileMenuOpen((o) => !o)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            </button>
+          </div>
         </nav>
+
+        {mobileMenuOpen && (
+          <div className="border-t border-white/10 bg-background/95 px-6 py-4 md:hidden">
+            <div className="flex flex-col gap-1">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="border-b border-white/[0.06] py-3 font-mono text-[0.68rem] uppercase tracking-[0.2em] text-muted-foreground transition hover:text-primary"
+                >
+                  {item.label}
+                </a>
+              ))}
+              <a
+                href="#contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="mt-3 inline-flex items-center justify-center bg-primary px-4 py-3 font-mono text-[0.68rem] uppercase tracking-[0.2em] text-primary-foreground transition hover:bg-primary/90"
+              >
+                Start a Project
+              </a>
+            </div>
+          </div>
+        )}
       </header>
 
       <main>
