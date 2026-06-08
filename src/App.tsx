@@ -260,10 +260,31 @@ const capabilities = [
 ];
 
 const credentials = [
-  ["2014", "B.Eng Electronic Engineering", "National University of Science and Technology (NUST), Bulawayo"],
-  ["2020", "Company Founded", "Ramcode Investments established in Bulawayo, Zimbabwe"],
-  ["CEA", "Certified Energy Auditor", "Association of Energy Engineers member #90987"],
-  ["Now", "Regional Delivery", "Zimbabwe, South Africa, SADC region, and remote software clients"],
+  [
+    "2012",
+    "City of Bulawayo — Electrical Engineer",
+    "12 years in the Water Department responsible for the design, procurement, installation and commissioning of electrical, instrumentation and control systems across water treatment plants, wastewater treatment plants, pump stations, traffic lighting, and radio communication infrastructure.",
+  ],
+  [
+    "2014",
+    "B.Eng Electronic Engineering",
+    "National University of Science and Technology (NUST), Bulawayo, Zimbabwe.",
+  ],
+  [
+    "2020",
+    "Ramcode Investments Founded",
+    "Established to extend field-proven municipal engineering delivery to private and commercial clients, incorporating IIoT, automation, and AI software platforms.",
+  ],
+  [
+    "CEA",
+    "Certified Energy Auditor",
+    "Association of Energy Engineers — membership #90987. PRINCE2 Foundation certified project manager (certificate #GR656227718TD).",
+  ],
+  [
+    "2024",
+    "Technical Director, Ramcode",
+    "Transitioned to full-time leadership of Ramcode after 12 years at the City of Bulawayo, driving industrial automation, digital platforms, and AI-enabled engineering solutions across the SADC region.",
+  ],
 ];
 
 const serviceOptions = [
@@ -721,9 +742,16 @@ function About() {
           <h2 className="mt-2 font-display text-5xl font-bold leading-none tracking-[0.04em] md:text-6xl">
             Engineering Depth. Digital Execution.
           </h2>
-          <div className="mt-8 space-y-4 text-base leading-8 text-muted-foreground">
-            <p>Ramcode combines field engineering with software capability to improve reliability, visibility, and project outcomes.</p>
-            <p>From wastewater and power systems to AI-enabled operations platforms, delivery is built around practical execution and accountability.</p>
+          <div className="mt-8 space-y-5 text-base leading-8 text-muted-foreground">
+            <p>
+              Ramcode is led by <strong className="font-medium text-foreground">Thulani Dube</strong>, an electrical engineer with over 12 years of hands-on municipal infrastructure delivery at the City of Bulawayo — Zimbabwe's second largest city. From 2012 to 2024 he served as Electrical Engineer in the Water Department, responsible for the full project lifecycle across water treatment, wastewater treatment, pump stations, traffic lighting, and radio communication systems.
+            </p>
+            <p>
+              Municipal projects delivered include the rehabilitation of Aisleby 3 and SAST wastewater treatment plants, the upgrade of Criterion Water Treatment Plant, 88kV SF6 circuit breaker installations at Ncema and Fernhill waterworks, 6.6kV centrifugal pump systems with soft starters and motor protection, large-scale flow metering installations, and the construction of Luveve sewer pump station. Each project was delivered in the role of Electrical Designer and Project Manager.
+            </p>
+            <p>
+              Ramcode Investments was founded in 2020 to bring that same engineering discipline to private and commercial clients — combining field-proven electromechanical delivery with modern automation, IIoT, and AI software platforms.
+            </p>
           </div>
           <div className="mt-9 grid gap-3 sm:grid-cols-2">
             {capabilities.map((skill) => (
@@ -742,7 +770,8 @@ function About() {
             </div>
             <figcaption className="mt-4 border-t border-white/10 pt-4">
               <p className="font-display text-2xl font-bold tracking-[0.04em] text-foreground">Thulani Dube</p>
-              <p className="mt-1 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-primary">Director · Ramcode Investments</p>
+              <p className="mt-1 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-primary">Technical Director · Ramcode Investments</p>
+              <p className="mt-0.5 font-mono text-[0.58rem] uppercase tracking-[0.14em] text-muted-foreground/70">CEA · PRINCE2 Foundation · B.Eng Electronic Engineering</p>
             </figcaption>
           </figure>
 
