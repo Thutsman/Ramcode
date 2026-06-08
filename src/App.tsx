@@ -32,6 +32,7 @@ import streetlightingImg from "../streetlighting.jpg";
 import snapbuuksImg from "../snapbuuks-app.jpg";
 import panelInstallPhoto from "../20190213_152616.jpg";
 import transformerTestingPhoto from "../20220616_123346.jpg";
+import simplibooksImg from "../simplibooks-app.jpg";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -185,6 +186,7 @@ const projects = [
     badge: "Full-Stack · ERP",
     kind: "full",
     name: "SimpliBooks",
+    image: simplibooksImg,
     desc: "Multi-tenant accounting ERP for invoicing, payroll, inventory, reconciliation, and VAT reporting.",
     tags: ["React", "PostgreSQL", "RLS", "Tailwind"],
     href: "https://simplibooks.org",
