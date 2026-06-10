@@ -38,6 +38,7 @@ import simplibooksImg from "../simplibooks-app.jpg";
 import businessReportingImg from "../business-reporting.png";
 import industrialAutomationImg from "../industrial-automation-dashboard.png";
 import instrumentationControlImg from "../instrumentation-control-engineering.jpg";
+import powerSystemsImg from "../power-systems-engineering.jpg";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -84,6 +85,7 @@ const primaryServices = [
   {
     title: "Power Systems Engineering",
     icon: BarChart3,
+    image: powerSystemsImg,
     desc: "Load analysis, transformer and switchgear design, protection coordination, ETAP/PowerCAD studies, and electrical infrastructure assessments.",
     outcomes: ["Safer power distribution", "Compliance-aligned designs", "Optimised network performance"],
   },
@@ -817,7 +819,7 @@ function Contact() {
       <div className="container">
         <SectionHeading kicker="Get In Touch" title="Start Your Engineering or Software Project">
           <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-            <a href="mailto:ramcodecompany@gmail.com">Email Ramcode</a>
+            <a href="mailto:enquiries@ramcode.org">Email Ramcode</a>
           </Button>
         </SectionHeading>
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1fr]">
@@ -825,7 +827,7 @@ function Contact() {
             {[
               { icon: MapPin, label: "Location", value: "17 Grenville Ave, West Somerton\nBulawayo, Zimbabwe" },
               { icon: Phone, label: "Phone / WhatsApp", value: "+263 779 035 404" },
-              { icon: Mail, label: "Email", value: "ramcodecompany@gmail.com" },
+              { icon: Mail, label: "Email", value: "enquiries@ramcode.org" },
               { icon: Globe2, label: "Region", value: "Zimbabwe · South Africa\nSADC Region · Remote Worldwide" },
             ].map((item) => {
               const Icon = item.icon;
@@ -844,7 +846,7 @@ function Contact() {
           </div>
 
           <Card className="reveal p-6 md:p-8">
-            <form className="space-y-5" action="mailto:ramcodecompany@gmail.com" method="post" encType="text/plain">
+            <form className="space-y-5" action="mailto:enquiries@ramcode.org" method="post" encType="text/plain">
               <div className="grid gap-5 md:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="name">Your Name</Label>
