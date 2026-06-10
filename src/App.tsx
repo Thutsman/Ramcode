@@ -37,6 +37,7 @@ import transformerTestingPhoto from "../20220616_123346.jpg";
 import simplibooksImg from "../simplibooks-app.jpg";
 import businessReportingImg from "../business-reporting.png";
 import industrialAutomationImg from "../industrial-automation-dashboard.png";
+import instrumentationControlImg from "../instrumentation-control-engineering.jpg";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -76,6 +77,7 @@ const primaryServices = [
   {
     title: "Instrumentation & Control Engineering",
     icon: Gauge,
+    image: instrumentationControlImg,
     desc: "Instrumentation architecture, P&IDs, control loops, flow metering, RTU design, and SCADA integration for water and industrial systems.",
     outcomes: ["Accurate measurement", "Stable process regulation", "Audit-ready engineering documentation"],
   },
