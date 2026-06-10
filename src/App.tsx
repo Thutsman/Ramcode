@@ -36,6 +36,7 @@ import panelInstallPhoto from "../20190213_152616.jpg";
 import transformerTestingPhoto from "../20220616_123346.jpg";
 import simplibooksImg from "../simplibooks-app.jpg";
 import businessReportingImg from "../business-reporting.png";
+import industrialAutomationImg from "../industrial-automation-dashboard.png";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -68,6 +69,7 @@ const primaryServices = [
   {
     title: "Industrial Automation & PLC/SCADA",
     icon: Zap,
+    image: industrialAutomationImg,
     desc: "Design, programming, commissioning, and optimisation of industrial control systems across Siemens, Delta, Allen-Bradley, and Schneider platforms.",
     outcomes: ["Reliable process control", "Real-time operations visibility", "Reduced downtime and faults"],
   },
@@ -507,7 +509,18 @@ function Services() {
           {primaryServices.map((service) => {
             const Icon = service.icon;
             return (
-              <Card key={service.title} className="reveal border-primary/30 bg-background/95 p-7">
+              <Card key={service.title} className="reveal border-primary/30 bg-background/95 overflow-hidden p-0">
+                {service.image && (
+                  <div className="relative h-44 w-full overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="h-full w-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+                  </div>
+                )}
+                <div className="p-7">
                 <CardHeader className="p-0">
                   <div className="mb-4 grid h-12 w-12 place-items-center border border-primary/30 bg-primary/10">
                     <Icon className="h-6 w-6 text-primary" />
@@ -525,6 +538,7 @@ function Services() {
                     ))}
                   </ul>
                 </CardContent>
+                </div>
               </Card>
             );
           })}
