@@ -64,7 +64,7 @@ const heroPillars = [
   },
   {
     title: "Digital Solutions",
-    points: ["Web Applications", "AI Automation", "IoT Platforms"],
+    points: ["Web Applications", "AI Automation", "IoT Platforms", "Hospitality Tech"],
     accent: "text-primary border-primary/30 bg-primary/10",
   },
 ];
