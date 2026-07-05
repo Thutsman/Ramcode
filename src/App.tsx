@@ -40,7 +40,7 @@ import businessReportingImg from "../business-reporting.png";
 import industrialAutomationImg from "../industrial-automation-dashboard.png";
 import instrumentationControlImg from "../instrumentation-control-engineering.jpg";
 import powerSystemsImg from "../power-systems-engineering.jpg";
-import hospitalityPosImg from "../tableflow-hospitality-pos.jpg";
+import koriHeroImg from "../kori-studio-hero.jpg";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -204,7 +204,7 @@ const projects = [
     badge: "Hospitality · Full-Stack",
     kind: "hospitality",
     name: "Kori Studio Bulawayo — Café, Ordering & POS Platform",
-    image: hospitalityPosImg,
+    image: koriHeroImg,
     desc: "A brand-forward ordering site with WhatsApp checkout and live admin analytics, paired with a realtime POS and kitchen display system for front-of-house-to-kitchen coordination.",
     tags: ["React", "Supabase", "Realtime", "POS", "WhatsApp API"],
     href: "#contact",
