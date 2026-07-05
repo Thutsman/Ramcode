@@ -15,6 +15,7 @@ import {
   MonitorCog,
   Phone,
   ShieldCheck,
+  UtensilsCrossed,
   Workflow,
   X,
   Zap,
@@ -39,6 +40,7 @@ import businessReportingImg from "../business-reporting.png";
 import industrialAutomationImg from "../industrial-automation-dashboard.png";
 import instrumentationControlImg from "../instrumentation-control-engineering.jpg";
 import powerSystemsImg from "../power-systems-engineering.jpg";
+import hospitalityPosImg from "../tableflow-hospitality-pos.jpg";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -125,6 +127,11 @@ const digitalSupport = [
     icon: Workflow,
     desc: "Node-RED, MQTT, and cloud-connected telemetry for industrial monitoring and data-driven operations.",
   },
+  {
+    title: "Hospitality & Restaurant Tech",
+    icon: UtensilsCrossed,
+    desc: "Café and restaurant digital platforms — ordering sites, POS and kitchen display systems, and real-time front-of-house-to-kitchen coordination.",
+  },
 ];
 
 const serviceEvidence = [
@@ -193,6 +200,16 @@ const projects = [
     href: "https://simplibooks.org",
     link: "simplibooks.org",
   },
+  {
+    badge: "Hospitality · Full-Stack",
+    kind: "hospitality",
+    name: "Kori Studio Bulawayo — Café, Ordering & POS Platform",
+    image: hospitalityPosImg,
+    desc: "A brand-forward ordering site with WhatsApp checkout and live admin analytics, paired with a realtime POS and kitchen display system for front-of-house-to-kitchen coordination.",
+    tags: ["React", "Supabase", "Realtime", "POS", "WhatsApp API"],
+    href: "#contact",
+    link: "Discuss Hospitality Solutions",
+  },
 ];
 
 const caseStudies = [
@@ -231,6 +248,13 @@ const caseStudies = [
     solution: "Custom SaaS products, ERP modules, AI automation, and role-based access.",
     outcome: "Streamlined workflows and measurable reporting consistency.",
   },
+  {
+    title: "Hospitality Digital Transformation",
+    client: "Café & Restaurant Hospitality",
+    challenge: "A boutique café needed a brand-forward online presence, low-friction WhatsApp-first ordering, and real-time kitchen coordination without expensive POS hardware.",
+    solution: "A custom animated ordering site with WhatsApp checkout and a live admin dashboard, paired with a realtime POS platform covering floor plan management, course firing, kitchen display, billing, and reporting.",
+    outcome: "One connected digital stack from customer order through kitchen fulfilment to nightly reporting, synced live across every device.",
+  },
 ];
 
 const industries = [
@@ -240,6 +264,7 @@ const industries = [
   "Energy & Utilities",
   "Construction & Civil",
   "SMEs & Enterprise Operations",
+  "Hospitality & Food Service",
 ];
 
 const whyChoose = [
@@ -296,6 +321,7 @@ const serviceOptions = [
   "Web Application Development",
   "AI Automation",
   "IoT Platform Development",
+  "Hospitality & Restaurant Technology",
   "Engineering Consulting",
   "Other",
 ];
@@ -618,6 +644,7 @@ function Projects() {
     ai: "border-primary/35 bg-primary/10 text-primary",
     electrical: "border-sky-400/30 bg-sky-400/10 text-sky-300",
     full: "border-emerald-400/30 bg-emerald-400/10 text-emerald-300",
+    hospitality: "border-amber-400/30 bg-amber-400/10 text-amber-300",
   };
 
   return (
