@@ -210,6 +210,15 @@ const projects = [
     href: "#contact",
     link: "Discuss Hospitality Solutions",
   },
+  {
+    badge: "Mobile · App",
+    kind: "mobile",
+    name: "ShieldTrack",
+    desc: "Personal safety app with real-time location sharing, emergency alerts, and check-ins — available on iOS and Android.",
+    tags: ["Mobile App", "Real-Time Location", "Safety Alerts", "iOS & Android"],
+    href: "https://shieldtrack.app",
+    link: "Visit shieldtrack.app",
+  },
 ];
 
 const caseStudies = [
@@ -645,6 +654,7 @@ function Projects() {
     electrical: "border-sky-400/30 bg-sky-400/10 text-sky-300",
     full: "border-emerald-400/30 bg-emerald-400/10 text-emerald-300",
     hospitality: "border-amber-400/30 bg-amber-400/10 text-amber-300",
+    mobile: "border-violet-400/30 bg-violet-400/10 text-violet-300",
   };
 
   return (
