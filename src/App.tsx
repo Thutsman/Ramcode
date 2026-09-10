@@ -41,6 +41,7 @@ import industrialAutomationImg from "../industrial-automation-dashboard.png";
 import instrumentationControlImg from "../instrumentation-control-engineering.jpg";
 import powerSystemsImg from "../power-systems-engineering.jpg";
 import koriHeroImg from "../kori-studio-hero.jpg";
+import shieldtrackImg from "../shieldtrack-app.jpg";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -214,7 +215,8 @@ const projects = [
     badge: "Mobile · App",
     kind: "mobile",
     name: "ShieldTrack",
-    desc: "Personal safety app with real-time location sharing, emergency alerts, and check-ins — available on iOS and Android.",
+    image: shieldtrackImg,
+    desc: "Personal safety network for Africa — create trusted safety circles with family, friends, and responders, share live location, and get help from the people closest to you with one tap.",
     tags: ["Mobile App", "Real-Time Location", "Safety Alerts", "iOS & Android"],
     href: "https://shieldtrack.app",
     link: "Visit shieldtrack.app",
