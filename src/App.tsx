@@ -4,7 +4,6 @@ import {
   ArrowRight,
   BarChart3,
   Brain,
-  CheckCircle2,
   ClipboardList,
   Gauge,
   Globe2,
@@ -42,32 +41,31 @@ import instrumentationControlImg from "../instrumentation-control-engineering.jp
 import powerSystemsImg from "../power-systems-engineering.jpg";
 import koriHeroImg from "../kori-studio-hero.jpg";
 import shieldtrackImg from "../shieldtrack-app.jpg";
+import heroFieldImg from "../hero-field-panel.webp";
+import ngoziImg from "../ngozi-app.webp";
+import shieldtrackPhoneImg from "../shieldtrack-phone.webp";
 
 const navItems = [
   { label: "Services", href: "#services" },
+  { label: "Projects", href: "#projects" },
   { label: "Case Studies", href: "#case-studies" },
   { label: "Clients", href: "#clients" },
   { label: "Company", href: "#about" },
 ];
 
 const stats = [
-  ["10+", "Years Engineering Experience"],
-  ["Industrial", "& Municipal Projects Delivered"],
+  ["12+", "Years Engineering Experience"],
+  ["5", "Live Software Products"],
   ["2020", "Founded in Bulawayo, Zimbabwe"],
-  ["2", "Engineering + Digital Divisions"],
+  ["2", "Engineering + Software Divisions"],
 ];
 
-const heroPillars = [
-  {
-    title: "Industrial Engineering",
-    points: ["PLC/SCADA", "Instrumentation & Control", "Power Systems"],
-    accent: "text-sky-300 border-sky-400/30 bg-sky-400/10",
-  },
-  {
-    title: "Digital Solutions",
-    points: ["Web Applications", "AI Automation", "IoT Platforms", "Hospitality Tech"],
-    accent: "text-primary border-primary/30 bg-primary/10",
-  },
+const shippedProducts = [
+  { name: "ShieldTrack", domain: "shieldtrack.app", category: "Safety app · iOS & Android" },
+  { name: "Ngozi", domain: "ngozi.ng", category: "Classifieds marketplace" },
+  { name: "Kori Studio", domain: "koristudio.org", category: "Ordering & POS" },
+  { name: "SnapBuuks", domain: "snapbuuks.app", category: "AI accounting" },
+  { name: "SimpliBooks", domain: "simplibooks.org", category: "Accounting ERP" },
 ];
 
 const primaryServices = [
@@ -114,9 +112,9 @@ const secondaryServices = [
 
 const digitalSupport = [
   {
-    title: "Web Applications",
+    title: "Web & Mobile Apps",
     icon: MonitorCog,
-    desc: "Business applications, ERP modules, and operational dashboards tailored to engineering workflows.",
+    desc: "Production web and native apps with realtime data, push notifications, payments and secure multi-tenant backends.",
   },
   {
     title: "AI Automation",
@@ -208,18 +206,28 @@ const projects = [
     image: koriHeroImg,
     desc: "A brand-forward ordering site with WhatsApp checkout and live admin analytics, paired with a realtime POS and kitchen display system for front-of-house-to-kitchen coordination.",
     tags: ["React", "Supabase", "Realtime", "POS", "WhatsApp API"],
-    href: "#contact",
-    link: "Discuss Hospitality Solutions",
+    href: "https://koristudio.org",
+    link: "Visit koristudio.org",
   },
   {
-    badge: "Mobile · App",
+    badge: "Mobile · Full-Stack",
     kind: "mobile",
     name: "ShieldTrack",
     image: shieldtrackImg,
-    desc: "Personal safety network for Africa — create trusted safety circles with family, friends, and responders, share live location, and get help from the people closest to you with one tap.",
-    tags: ["Mobile App", "Real-Time Location", "Safety Alerts", "iOS & Android"],
+    desc: "Personal safety network for Africa. Members share live location with trusted circles and send a one-tap SOS that fans out by email and push in seconds, backed by admin and agency command-centre dashboards.",
+    tags: ["iOS & Android", "Realtime Location", "Push & Email Alerts", "Supabase", "Google Maps"],
     href: "https://shieldtrack.app",
     link: "Visit shieldtrack.app",
+  },
+  {
+    badge: "Marketplace · Full-Stack",
+    kind: "full",
+    name: "Ngozi",
+    image: ngoziImg,
+    desc: "Classifieds marketplace for Nigeria covering cars, property, jobs, phones and more across all 36 states and the FCT, with search, in-app messaging, push notifications and seller safety built in.",
+    tags: ["Next.js", "Supabase", "Search", "Messaging", "Web Push"],
+    href: "https://ngozi.ng",
+    link: "Visit ngozi.ng",
   },
 ];
 
@@ -329,7 +337,7 @@ const serviceOptions = [
   "Street Lighting Design & Installation",
   "Electrical Testing & Motor Management",
   "Project & Contract Management",
-  "Web Application Development",
+  "Web & Mobile App Development",
   "AI Automation",
   "IoT Platform Development",
   "Hospitality & Restaurant Technology",
@@ -447,10 +455,13 @@ function Hero() {
           <h1 className="mt-6 font-display text-5xl font-bold leading-[0.95] tracking-[0.02em] text-foreground md:text-7xl">
             Engineering Systems
             <br />
+            &amp; Software
+            <br />
             <span className="text-primary">That Scale</span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground">
-            Ramcode delivers engineering expertise combined with modern software, automation, AI, and industrial digitalization.
+            From control panels in the plant room to live apps people use every day. Ramcode designs, builds and runs both:
+            electrical and automation engineering, and production software products.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
@@ -464,55 +475,88 @@ function Hero() {
           </div>
         </div>
 
-        <div className="reveal hero-signal-system relative">
-          <div className="hero-signal-line" aria-hidden />
-          <div className="hero-signal-pulse" aria-hidden />
-          <div className="hero-signal-node hero-signal-node-1" aria-hidden />
-          <div className="hero-signal-node hero-signal-node-2" aria-hidden />
-          <div className="hero-signal-arrow hero-signal-arrow-1" aria-hidden />
-          <div className="hero-signal-arrow hero-signal-arrow-2" aria-hidden />
+        <HeroShowcase />
+      </div>
+    </section>
+  );
+}
 
-          <div className="grid gap-4">
-            {heroPillars.map((pillar, index) => (
-              <Card
-                key={pillar.title}
-                className={cn(
-                  "hero-signal-card border-white/10 bg-background/90 p-6",
-                  index === 0 && "hero-signal-card-1",
-                  index === 1 && "hero-signal-card-2",
-                )}
-              >
-                <CardHeader className="relative p-0">
-                  <div className={cn("inline-flex w-fit border px-3 py-1 font-mono text-[0.62rem] uppercase tracking-[0.18em]", pillar.accent)}>
-                    {pillar.title}
-                  </div>
-                  <div className="hero-status-indicator absolute right-0 top-0 inline-flex items-center gap-2 border border-primary/25 bg-primary/10 px-2 py-1 font-mono text-[0.52rem] uppercase tracking-[0.15em] text-primary">
-                    <span className="hero-status-dot" />
-                    Online
-                  </div>
-                </CardHeader>
-                <CardContent className="mt-4 p-0">
-                  <ul className="space-y-2">
-                    {pillar.points.map((point) => (
-                      <li key={point} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="h-4 w-4 text-primary" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-            <Card className="hero-signal-card hero-signal-card-3 border-primary/30 bg-primary/10 p-5">
-              <p className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-primary">
-                Positioning
-              </p>
-              <p className="mt-2 text-sm leading-7 text-foreground">
-                Software capabilities at Ramcode do not replace engineering delivery. They strengthen field engineering through better control, visibility, and decision support.
-              </p>
-            </Card>
-          </div>
+function HeroShowcase() {
+  return (
+    <div className="reveal relative mx-auto aspect-[5/4] w-full max-w-xl">
+      <figure className="absolute right-0 top-0 h-[80%] w-[60%] overflow-hidden border border-primary/30 bg-secondary shadow-card">
+        <img
+          src={heroFieldImg}
+          alt="Ramcode-built control panel installed on site"
+          className="h-full w-full object-cover"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+        <figcaption className="absolute left-2 top-2 whitespace-nowrap border border-primary/40 bg-background/85 px-2 py-1 font-mono text-[0.5rem] uppercase tracking-[0.14em] text-primary backdrop-blur sm:left-3 sm:top-3 sm:px-2.5 sm:text-[0.55rem] sm:tracking-[0.16em]">
+          On site<span className="hidden sm:inline"> · Control panel build</span>
+        </figcaption>
+      </figure>
+
+      <a
+        href="https://ngozi.ng"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Open ngozi.ng, a live marketplace built by Ramcode"
+        className="group absolute bottom-[9%] left-0 w-[76%] overflow-hidden rounded-md border border-white/15 bg-card shadow-2xl shadow-black/60 transition duration-300 hover:-translate-y-1 hover:border-primary/50"
+      >
+        <div className="flex items-center gap-1.5 border-b border-white/10 bg-secondary/90 px-3 py-2">
+          <span className="h-2 w-2 rounded-full bg-red-400/80" />
+          <span className="h-2 w-2 rounded-full bg-amber-300/80" />
+          <span className="h-2 w-2 rounded-full bg-emerald-400/80" />
+          <span className="ml-2 truncate rounded-sm bg-background/70 px-2 py-0.5 font-mono text-[0.55rem] text-muted-foreground">
+            ngozi.ng
+          </span>
         </div>
+        <img src={ngoziImg} alt="Ngozi classifieds marketplace home page" className="aspect-[16/10] w-full object-cover object-top" />
+      </a>
+
+      <a
+        href="https://shieldtrack.app"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Open shieldtrack.app, a live safety app built by Ramcode"
+        className="absolute bottom-0 right-[5%] w-[25%] overflow-hidden rounded-[1.1rem] border-[3px] border-zinc-800 bg-zinc-900 shadow-2xl shadow-black/70 transition duration-300 hover:-translate-y-1 hover:border-primary/60 md:rounded-[1.5rem] md:border-4"
+      >
+        <img src={shieldtrackPhoneImg} alt="ShieldTrack app SOS screen" className="w-full" />
+      </a>
+
+      <span className="absolute -bottom-7 left-0 inline-flex items-center gap-2 font-mono text-[0.55rem] uppercase tracking-[0.16em] text-muted-foreground md:-bottom-8">
+        <span className="hero-status-dot" />
+        Live products · tap to open
+      </span>
+    </div>
+  );
+}
+
+function ShippedStrip() {
+  return (
+    <section aria-label="Software products built and shipped by Ramcode" className="relative z-10 border-t border-white/10 bg-background px-6 py-6 md:px-10">
+      <div className="container flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-10">
+        <p className="shrink-0 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-primary">Built &amp; shipped</p>
+        <ul className="grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3 lg:flex lg:flex-1 lg:justify-between">
+          {shippedProducts.map((product) => (
+            <li key={product.domain}>
+              <a
+                href={`https://${product.domain}`}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex flex-col"
+              >
+                <span className="font-display text-lg font-bold tracking-[0.03em] text-foreground transition group-hover:text-primary">
+                  {product.name}
+                </span>
+                <span className="font-mono text-[0.55rem] uppercase tracking-[0.14em] text-muted-foreground/70">
+                  {product.category}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
@@ -607,12 +651,14 @@ function Services() {
           })}
         </div>
 
-        <div className="reveal mt-12 border border-sky-400/20 bg-sky-400/[0.06] p-6">
-          <p className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-sky-300">Engineering + Software Positioning</p>
-          <p className="mt-3 text-sm leading-7 text-foreground">
-            Ramcode uses digital platforms to support engineering execution: monitoring assets, automating reports, and creating visibility for municipal and industrial operations.
+        <div className="reveal mt-12 border border-sky-400/20 bg-sky-400/[0.06] p-6 md:p-8">
+          <p className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-sky-300">Software Engineering</p>
+          <h3 className="mt-3 font-display text-3xl font-bold tracking-[0.03em] text-foreground md:text-4xl">Products We Build, Ship and Run</h3>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-muted-foreground">
+            The same discipline that commissions a pump station goes into our software: realtime mobile apps, marketplaces, SaaS and
+            AI platforms in production today, plus dashboards and automation that give engineering teams visibility over their assets.
           </p>
-          <div className="mt-5 grid gap-3 md:grid-cols-3">
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {digitalSupport.map((item) => {
               const Icon = item.icon;
               return (
@@ -984,6 +1030,7 @@ function App() {
 
       <main>
         <Hero />
+        <ShippedStrip />
         <Stats />
         <Services />
         <Projects />
