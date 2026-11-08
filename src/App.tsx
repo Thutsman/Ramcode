@@ -43,6 +43,7 @@ import koriHeroImg from "../kori-studio-hero.webp";
 import shieldtrackImg from "../shieldtrack-app.webp";
 import heroFieldImg from "../hero-field-panel.webp";
 import ngoziImg from "../ngozi-app.webp";
+import complexpulseImg from "../complexpulse-app.webp";
 import shieldtrackPhoneImg from "../shieldtrack-phone.webp";
 
 const navItems = [
@@ -55,13 +56,14 @@ const navItems = [
 
 const stats = [
   ["12+", "Years Engineering Experience"],
-  ["5", "Live Software Products"],
+  ["6", "Live Software Products"],
   ["2020", "Founded in Bulawayo, Zimbabwe"],
   ["2", "Engineering + Software Divisions"],
 ];
 
 const shippedProducts = [
   { name: "ShieldTrack", domain: "shieldtrack.app", category: "Safety app · iOS & Android" },
+  { name: "ComplexPulse", domain: "complexpulse.com", category: "Property management SaaS" },
   { name: "Ngozi", domain: "ngozi.ng", category: "Classifieds marketplace" },
   { name: "Kori Studio", domain: "koristudio.org", category: "Ordering & POS" },
   { name: "SnapBuuks", domain: "snapbuuks.app", category: "AI accounting" },
@@ -218,6 +220,16 @@ const projects = [
     tags: ["iOS & Android", "Realtime Location", "Push & Email Alerts", "Supabase", "Google Maps"],
     href: "https://shieldtrack.app",
     link: "Visit shieldtrack.app",
+  },
+  {
+    badge: "SaaS · WhatsApp",
+    kind: "full",
+    name: "ComplexPulse",
+    image: complexpulseImg,
+    desc: "Issue log and status page for South African body corporates. Residents report on WhatsApp, trustees get a ticket board, owners get a live status page and a weekly digest.",
+    tags: ["WhatsApp Business API", "Ticketing", "Status Pages", "Multi-tenant SaaS"],
+    href: "https://complexpulse.com",
+    link: "Visit complexpulse.com",
   },
   {
     badge: "Marketplace · Full-Stack",
@@ -498,10 +510,10 @@ function HeroShowcase() {
       </figure>
 
       <a
-        href="https://ngozi.ng"
+        href="https://complexpulse.com"
         target="_blank"
         rel="noreferrer"
-        aria-label="Open ngozi.ng, a live marketplace built by Ramcode"
+        aria-label="Open complexpulse.com, a live property management platform built by Ramcode"
         className="group absolute bottom-[9%] left-0 w-[76%] overflow-hidden rounded-md border border-white/15 bg-card shadow-2xl shadow-black/60 transition duration-300 hover:-translate-y-1 hover:border-primary/50"
       >
         <div className="flex items-center gap-1.5 border-b border-white/10 bg-secondary/90 px-3 py-2">
@@ -509,10 +521,10 @@ function HeroShowcase() {
           <span className="h-2 w-2 rounded-full bg-amber-300/80" />
           <span className="h-2 w-2 rounded-full bg-emerald-400/80" />
           <span className="ml-2 truncate rounded-sm bg-background/70 px-2 py-0.5 font-mono text-[0.55rem] text-muted-foreground">
-            ngozi.ng
+            complexpulse.com
           </span>
         </div>
-        <img src={ngoziImg} alt="Ngozi classifieds marketplace home page" className="aspect-[16/10] w-full object-cover object-top" />
+        <img src={complexpulseImg} alt="ComplexPulse home page showing a WhatsApp resident report becoming a ticket" className="aspect-[16/10] w-full object-cover object-top" />
       </a>
 
       <a
