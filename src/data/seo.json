@@ -1,0 +1,26 @@
+{
+  "siteUrl": "https://ramcode.org",
+  "routes": {
+    "/": {
+      "title": "Ramcode Investments | Engineering, Mining Supplies & Software, Bulawayo",
+      "description": "Ramcode Investments in Bulawayo, Zimbabwe: PLC/SCADA and power systems engineering, mining and industrial supplies (switchgear, cables, motors, PPE), and production software and AI products.",
+      "image": "/og-home.jpg"
+    },
+    "/mining": {
+      "title": "Mining & Industrial Supplies Zimbabwe | Electrical Spares & Consumables | Ramcode",
+      "description": "Electrical spares supplier in Zimbabwe and mining consumables in Bulawayo: switchgear, cables, motors, PPE, bearings and more, matched to your spec and backed by engineers. Request a quote.",
+      "image": "/og-mining.jpg"
+    },
+    "/mining/request-quote": {
+      "title": "Request a Quote | Mining & Industrial Supplies | Ramcode Bulawayo",
+      "description": "Send your item list, quantities and delivery date. Ramcode replies with a USD quotation and confirmed lead time for mines and plants across Zimbabwe.",
+      "image": "/og-mining.jpg"
+    },
+    "/credits": {
+      "title": "Image Credits | Ramcode Investments",
+      "description": "Attribution for the photographs and logos used on ramcode.org.",
+      "image": "/og-home.jpg",
+      "noindex": false
+    }
+  }
+}

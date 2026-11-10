@@ -1,0 +1,205 @@
+{
+  "electrical": [
+    {
+      "title": "Switchgear & protection",
+      "icon": "Zap",
+      "items": [
+        "Contactors",
+        "MCBs",
+        "MCCBs",
+        "ACBs",
+        "VCBs & SF6 breakers",
+        "Fuses",
+        "Overloads",
+        "Motor protection relays",
+        "CTs / VTs",
+        "Isolators",
+        "Busbars",
+        "Enclosures",
+        "Panel boards"
+      ]
+    },
+    {
+      "title": "Cables & accessories",
+      "icon": "Cable",
+      "items": [
+        "SWA power & control",
+        "Flexible & trailing cables",
+        "Glands",
+        "Lugs",
+        "Joints & terminations",
+        "Trays & ladders",
+        "Earthing"
+      ]
+    },
+    {
+      "title": "Motors & drives",
+      "icon": "Cog",
+      "items": [
+        "AC / DC motors",
+        "VSDs",
+        "Soft starters",
+        "Installation & alignment"
+      ]
+    },
+    {
+      "title": "Lighting",
+      "icon": "Lightbulb",
+      "items": [
+        "LED floodlights & high-bay",
+        "Perimeter & solar",
+        "Emergency lighting"
+      ]
+    },
+    {
+      "title": "Underground lighting",
+      "icon": "Flashlight",
+      "items": [
+        "Cap lamps & chargers",
+        "Underground-rated luminaires"
+      ]
+    },
+    {
+      "title": "Pumps & valves",
+      "icon": "Droplets",
+      "items": [
+        "Centrifugal & submersible pumps",
+        "Seals & kits",
+        "Gate, globe, ball, butterfly & check valves",
+        "Actuators"
+      ]
+    },
+    {
+      "title": "Instrumentation",
+      "icon": "Gauge",
+      "items": [
+        "Pressure, flow, level & temperature",
+        "Ultrasonic, radar & mag flowmeters",
+        "Smart transmitters",
+        "Control valves & positioners",
+        "pH, conductivity, turbidity & DO analysers"
+      ]
+    },
+    {
+      "title": "Control systems",
+      "icon": "Cpu",
+      "items": [
+        "PLCs",
+        "HMIs",
+        "SCADA hardware (Siemens, Delta, Allen-Bradley, Schneider)",
+        "Panel wiring & fabrication"
+      ]
+    },
+    {
+      "title": "Power & solar spares",
+      "icon": "BatteryCharging",
+      "items": [
+        "Surge protection",
+        "DC isolators",
+        "Inverter & BOS spares",
+        "UPS & batteries"
+      ]
+    }
+  ],
+  "consumables": [
+    {
+      "title": "PPE",
+      "icon": "HardHat",
+      "items": [
+        "Hard hats",
+        "Safety boots & gumboots",
+        "Reflective overalls",
+        "Gloves",
+        "Eye & ear protection",
+        "Dust masks & respirators",
+        "Harnesses"
+      ]
+    },
+    {
+      "title": "Safety & signage",
+      "icon": "ShieldAlert",
+      "items": [
+        "First aid kits",
+        "Fire extinguishers & servicing",
+        "Signage",
+        "Barricade tape",
+        "LOTO kits",
+        "Spill kits",
+        "Eyewash"
+      ]
+    },
+    {
+      "title": "Cleaning & hygiene",
+      "icon": "SprayCan",
+      "items": [
+        "Detergents",
+        "Hand cleaners",
+        "Degreasers",
+        "Mops & brooms",
+        "Refuse bags",
+        "Ablution consumables"
+      ]
+    },
+    {
+      "title": "Hoses, pipes & fittings",
+      "icon": "Waypoints",
+      "items": [
+        "Hydraulic, air & water hoses",
+        "Couplings & clamps",
+        "HDPE, PVC & steel pipe",
+        "Flanges & gaskets"
+      ]
+    },
+    {
+      "title": "Bearings & transmission",
+      "icon": "Disc3",
+      "items": [
+        "Bearings",
+        "V-belts",
+        "Couplings",
+        "Seals",
+        "Fasteners",
+        "Conveyor idlers & rollers"
+      ]
+    },
+    {
+      "title": "Lubricants",
+      "icon": "Droplet",
+      "items": [
+        "Engine, gear & hydraulic oils",
+        "Greases",
+        "Rock-drill oil",
+        "Drums & pails"
+      ]
+    },
+    {
+      "title": "Drilling consumables",
+      "icon": "Drill",
+      "items": [
+        "Drill bits",
+        "Steels & rods",
+        "Shank adaptors",
+        "Rock-drill spares"
+      ]
+    },
+    {
+      "title": "Mill & plant wear parts",
+      "icon": "Settings2",
+      "items": [
+        "Grinding balls & rods",
+        "Mill liners",
+        "Screen panels",
+        "Cyclone & pump wear parts",
+        "Steel wool for electrowinning"
+      ]
+    },
+    {
+      "title": "Process reagents",
+      "icon": "FlaskConical",
+      "items": [
+        "Activated carbon",
+        "Lime"
+      ]
+    }
+  ]
+}
