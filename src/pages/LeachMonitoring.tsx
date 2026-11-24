@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { useRevealAnimation } from "@/lib/hooks";
 import { useDocumentMeta } from "@/lib/useDocumentMeta";
-import { CONTACT, whatsappLink } from "@/data/site";
+import { whatsappLink } from "@/data/site";
 
 const section = "relative z-10 px-6 py-16 md:px-10 md:py-24";
 const h2 = "max-w-3xl font-display text-3xl font-bold leading-tight tracking-[0.03em] text-foreground md:text-5xl";
