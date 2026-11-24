@@ -16,6 +16,11 @@
       "description": "Send your item list, quantities and delivery date. Ramcode replies with a USD quotation and confirmed lead time for mines and plants across Zimbabwe.",
       "image": "/og-mining.jpg"
     },
+    "/mining/leach-monitoring": {
+      "title": "Leach Plant Monitoring & Automation Zimbabwe | pH, Cyanide & DO | Ramcode",
+      "description": "Real-time monitoring and automation for CIL, CIP, vat and heap leach gold plants in Zimbabwe: live pH, dissolved oxygen, cyanide, redox, density and temperature, with SMS and email alarms and automatic dosing. Book a free plant assessment.",
+      "image": "/og-leach-monitoring.jpg"
+    },
     "/credits": {
       "title": "Image Credits | Ramcode Investments",
       "description": "Attribution for the photographs and logos used on ramcode.org.",
