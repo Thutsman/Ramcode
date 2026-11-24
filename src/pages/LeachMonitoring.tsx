@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowRight, MessageCircle, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { SystemArchitecture } from "@/components/SystemArchitecture";
 import { useRevealAnimation } from "@/lib/hooks";
 import { useDocumentMeta } from "@/lib/useDocumentMeta";
 import { whatsappLink } from "@/data/site";
@@ -137,14 +138,7 @@ export default function LeachMonitoring() {
       <section className={`${section} bg-secondary/45`}>
         <div className="container">
           <div className="reveal mb-10">
-            <img
-              src="/mining/monitoring/monitoring-system-architecture.png"
-              alt="System architecture diagram showing field sensors and remote unit connecting to control centre, maintenance staff and customers via internet and GPRS"
-              width={800}
-              height={400}
-              loading="lazy"
-              className="mx-auto max-w-2xl"
-            />
+            <SystemArchitecture />
           </div>
           <div className="grid gap-10 lg:grid-cols-2">
             {/* Step 1 · Monitor */}
