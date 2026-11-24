@@ -40,5 +40,27 @@ export function buildJsonLd(path, categoryNames) {
       },
     ];
   }
+  if (path === "/mining/leach-monitoring") {
+    return [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: "Leach plant monitoring and automation",
+        serviceType: "Process monitoring and automation",
+        provider: { "@id": `${SITE_URL}/#organization` },
+        areaServed: { "@type": "Country", name: "Zimbabwe" },
+        url: `${SITE_URL}/mining/leach-monitoring`,
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Mining Supplies", item: `${SITE_URL}/mining` },
+          { "@type": "ListItem", position: 3, name: "Leach Monitoring & Automation", item: `${SITE_URL}/mining/leach-monitoring` },
+        ],
+      },
+    ];
+  }
   return [];
 }

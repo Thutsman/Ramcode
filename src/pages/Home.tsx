@@ -858,6 +858,21 @@ function DivisionSplit() {
           </Button>
         </Card>
       </div>
+
+      <div className="container mt-10">
+        <Card className="reveal border-primary/35 bg-background/90 p-7 md:p-9">
+          <p className="section-kicker">New Service</p>
+          <h3 className="font-display text-2xl font-bold tracking-[0.03em] text-foreground md:text-3xl">Leach Plant Monitoring & Automation</h3>
+          <CardDescription className="mt-4 text-sm leading-7">
+            Real-time pH, dissolved oxygen, cyanide, redox, density and temperature for CIL, CIP, vat and heap leach gold plants — with SMS/email alarms and automatic dosing control.
+          </CardDescription>
+          <Button asChild className="mt-6 h-auto w-fit max-w-full whitespace-normal bg-primary py-3 text-center text-primary-foreground hover:bg-primary/90">
+            <Link to="/mining/leach-monitoring">
+              Learn more <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
+        </Card>
+      </div>
     </section>
   );
 }

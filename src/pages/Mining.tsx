@@ -153,6 +153,27 @@ export default function Mining() {
         </div>
       </section>
 
+      <section id="leach-monitoring-teaser" className={`${section} bg-primary/[0.08]`}>
+        <div className="container">
+          <div className="reveal border border-primary/35 bg-background/90 p-8 md:p-12">
+            <p className="font-mono text-[0.65rem] uppercase tracking-[0.26em] text-primary">New service</p>
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-[0.03em] text-foreground md:text-4xl">
+              Leach Plant Monitoring & Automation
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-8 text-muted-foreground">
+              Real-time pH, dissolved oxygen, cyanide, redox, density and temperature monitoring for CIL, CIP, vat and heap leach plants — with SMS/email alarms and automatic dosing control. Book a free 1-hour plant assessment.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                <Link to="/mining/leach-monitoring">
+                  Learn more <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="engineering" aria-labelledby="eng-h" className={`${section} bg-secondary/45`}>
         <div className="container">
           <div className="reveal mb-10">

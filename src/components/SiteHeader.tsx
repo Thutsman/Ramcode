@@ -52,6 +52,13 @@ export function SiteHeader() {
               </Link>
             ))}
             <Link
+              to="/mining/leach-monitoring"
+              onClick={() => setMobileMenuOpen(false)}
+              className="border-b border-white/[0.06] py-3 font-mono text-[0.68rem] uppercase tracking-[0.2em] text-muted-foreground transition hover:text-primary"
+            >
+              Leach Monitoring
+            </Link>
+            <Link
               to={cta.to}
               onClick={() => setMobileMenuOpen(false)}
               className="mt-3 inline-flex items-center justify-center bg-primary px-4 py-3 font-mono text-[0.68rem] uppercase tracking-[0.2em] text-primary-foreground transition hover:bg-primary/90"
