@@ -4,7 +4,7 @@ import { CONTACT, PROFILE_PDF, navItems } from "@/data/site";
 const linkClass = "font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted-foreground/90 transition hover:text-primary";
 
 export function SiteFooter() {
-  const links = [...navItems, { label: "Contact", to: "/#contact" }];
+  const links = [...navItems, { label: "Leach Monitoring", to: "/mining/leach-monitoring" }, { label: "Contact", to: "/#contact" }];
   return (
     <footer className="relative z-10 border-t border-white/10 bg-card/80 px-6 py-8 md:px-10">
       <div className="container flex flex-col items-center justify-between gap-5 text-center md:flex-row md:text-left">

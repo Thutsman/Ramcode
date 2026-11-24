@@ -8,9 +8,10 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import Home from "@/pages/Home";
 
-// /mining, the RFQ page and /credits are code-split so the homepage bundle stays small.
+// /mining, the RFQ page, /leach-monitoring and /credits are code-split so the homepage bundle stays small.
 const Mining = lazy(() => import("@/pages/Mining"));
 const RequestQuote = lazy(() => import("@/pages/RequestQuote"));
+const LeachMonitoring = lazy(() => import("@/pages/LeachMonitoring"));
 const Credits = lazy(() => import("@/pages/Credits"));
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/mining" element={<Mining />} />
             <Route path="/mining/request-quote" element={<RequestQuote />} />
+            <Route path="/mining/leach-monitoring" element={<LeachMonitoring />} />
             <Route path="/credits" element={<Credits />} />
             <Route path="*" element={<Home />} />
           </Routes>
